@@ -1,0 +1,2671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POLAI EDUCATION HUB - SSC CGL Mock Test 2026</title>
+    <style>
+        /* Modern CSS Design System */
+        :root {
+            --primary: #0066cc;
+            --primary-hover: #0052a3;
+            --success: #2e7d32;
+            --success-light: #e8f5e9;
+            --danger: #d32f2f;
+            --danger-light: #ffebee;
+            --warning: #7b1fa2;
+            --warning-light: #f3e5f5;
+            --info: #0288d1;
+            --grey-light: #f5f5f5;
+            --grey-medium: #e0e0e0;
+            --grey-dark: #616161;
+            --text-dark: #212121;
+            --text-muted: #757575;
+            --white: #ffffff;
+            --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--text-dark);
+            background-color: #f8f9fa;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Utilities */
+        .hidden { display: none !important; }
+        
+        /* Gradient Cards & Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            gap: 8px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+        .btn:active {
+            transform: translateY(0);
+        }
+        .btn-primary { background: linear-gradient(135deg, #0073e6, #0059b3); color: var(--white); }
+        .btn-primary:hover { background: linear-gradient(135deg, #0080ff, #0066cc); }
+        .btn-success { background: linear-gradient(135deg, #2e7d32, #1b5e20); color: var(--white); }
+        .btn-success:hover { background: linear-gradient(135deg, #388e3c, #2e7d32); }
+        .btn-danger { background: linear-gradient(135deg, #d32f2f, #b71c1c); color: var(--white); }
+        .btn-danger:hover { background: linear-gradient(135deg, #e53935, #d32f2f); }
+        .btn-warning { background: linear-gradient(135deg, #7b1fa2, #4a148c); color: var(--white); }
+        .btn-warning:hover { background: linear-gradient(135deg, #8e24aa, #7b1fa2); }
+        .btn-secondary { background: #e0e0e0; color: var(--text-dark); }
+        .btn-secondary:hover { background: #d5d5d5; }
+        .btn-outline { border: 2px solid var(--primary); background: transparent; color: var(--primary); }
+        .btn-outline:hover { background: rgba(0,102,204,0.08); }
+
+        /* Animation utilities */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .fade-in { animation: fadeIn 0.4s ease-out forwards; }
+        .pulse-timer { animation: pulse 1s infinite ease-in-out; color: var(--danger) !important; }
+
+        /* Start Screen styling */
+        .start-screen {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f1f3f5 100%);
+        }
+        .start-card {
+            background: var(--white);
+            max-width: 600px;
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .start-header {
+            background: linear-gradient(135deg, #ff8c00, #e6005c, #9400d3);
+            color: var(--white);
+            padding: 30px;
+            text-align: center;
+        }
+        .start-header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        .start-header p {
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        .start-body {
+            padding: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--grey-medium);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        .form-group input:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0,102,204,0.15);
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            background: var(--grey-light);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 1px solid var(--grey-medium);
+        }
+        .info-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .info-item span:first-child {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .info-item span:last-child {
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .sections-list {
+            margin-bottom: 25px;
+        }
+        .sections-list h3 {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .section-badge-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .section-badge {
+            background: var(--white);
+            border: 1px solid var(--grey-medium);
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .section-badge span:last-child {
+            background: rgba(0,0,0,0.06);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* Test Layout styling */
+        .test-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background: var(--white);
+        }
+        
+        /* Top Header */
+        .test-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: var(--white);
+            border-bottom: 2px solid var(--grey-medium);
+            z-index: 10;
+        }
+        .header-left h2 {
+            font-size: 20px;
+            color: var(--primary);
+            font-weight: 800;
+        }
+        .header-center h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--grey-dark);
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .timer-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--grey-light);
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--grey-medium);
+            font-weight: 700;
+        }
+        .timer-val {
+            font-family: monospace;
+            font-size: 18px;
+        }
+
+        /* Section Tabs bar */
+        .section-tabs {
+            display: flex;
+            background: var(--grey-light);
+            border-bottom: 1px solid var(--grey-medium);
+            overflow-x: auto;
+        }
+        .sec-tab {
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            background: transparent;
+            cursor: not-allowed;
+            border-right: 1px solid var(--grey-medium);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+        .sec-tab.active {
+            background: var(--white);
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+            cursor: pointer;
+        }
+        .sec-tab.unlocked {
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+        .sec-tab.completed {
+            background: var(--success-light);
+            color: var(--success);
+            cursor: pointer;
+        }
+
+        /* Main Workspace split panel */
+        .test-workspace {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Left Sidebar: Sticky Palette */
+        .palette-panel {
+            width: 280px;
+            border-right: 2px solid var(--grey-medium);
+            background: #fafafa;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+        .palette-header {
+            padding: 15px;
+            border-bottom: 1px solid var(--grey-medium);
+            background: var(--white);
+        }
+        .palette-header h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        /* Question Palette Colors */
+        .c-visited { background-color: var(--grey-medium); color: var(--text-dark); }
+        .c-not-answered { background-color: var(--danger); color: var(--white); }
+        .c-answered { background-color: var(--success); color: var(--white); }
+        .c-review { background-color: var(--warning); color: var(--white); }
+        .c-unvisited { background-color: var(--white); border: 1px solid var(--grey-medium); color: var(--text-muted); }
+
+        .palette-grid-container {
+            padding: 15px;
+            flex: 1;
+        }
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+        }
+        .palette-btn {
+            aspect-ratio: 1;
+            border-radius: 50%;
+            border: 1px solid var(--grey-medium);
+            background: var(--white);
+            color: var(--text-dark);
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .palette-btn:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-sm);
+        }
+        .palette-btn.active {
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        /* Right Panel: Question text & options */
+        .question-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            overflow-y: auto;
+        }
+        .question-card {
+            padding: 30px;
+            flex: 1;
+        }
+        .question-number-header {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--grey-medium);
+        }
+        .question-text {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            user-select: none;
+        }
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        .option-item {
+            border: 1px solid var(--grey-medium);
+            border-radius: 8px;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: var(--transition);
+            background-color: var(--white);
+        }
+        .option-item:hover {
+            background-color: var(--grey-light);
+            border-color: var(--primary);
+        }
+        .option-item.selected {
+            background-color: var(--success-light);
+            border-color: var(--success);
+            color: var(--success);
+            font-weight: 700;
+        }
+        .option-radio {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid var(--grey-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .option-item.selected .option-radio {
+            border-color: var(--success);
+            background-color: var(--success);
+        }
+        .option-item.selected .option-radio::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: var(--white);
+            border-radius: 50%;
+        }
+        .option-letter {
+            font-weight: 700;
+        }
+
+        /* Bottom Control Buttons Bar */
+        .controls-bar {
+            padding: 15px 30px;
+            background: var(--grey-light);
+            border-top: 2px solid var(--grey-medium);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .controls-left, .controls-right {
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Results dashboard */
+        .result-screen {
+            padding: 40px 20px;
+            background: #fafafa;
+            min-height: 100vh;
+        }
+        .result-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--grey-medium);
+        }
+        .result-header {
+            background: linear-gradient(135deg, #0073e6, #004d99);
+            color: var(--white);
+            padding: 30px;
+            text-align: center;
+        }
+        .result-body {
+            padding: 30px;
+        }
+        .result-grid-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .metric-card {
+            background: var(--grey-light);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid var(--grey-medium);
+        }
+        .metric-card h4 {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+        .metric-card p {
+            font-size: 20px;
+            font-weight: 800;
+        }
+        .pass-tag {
+            color: var(--success);
+            font-size: 24px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .fail-tag {
+            color: var(--danger);
+            font-size: 24px;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        /* Section analysis styling */
+        .section-analysis {
+            margin-bottom: 30px;
+        }
+        .section-analysis h3 {
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--grey-medium);
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .analysis-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .analysis-table th, .analysis-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--grey-medium);
+            font-size: 14px;
+        }
+        .analysis-table th {
+            background: var(--grey-light);
+            font-weight: 700;
+        }
+
+        /* Charts section */
+        .charts-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .chart-box {
+            background: var(--white);
+            border: 1px solid var(--grey-medium);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+        .chart-box h4 {
+            margin-bottom: 15px;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        /* Certificate section overlay */
+        .certificate-section {
+            background: var(--grey-light);
+            border: 1px solid var(--grey-medium);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .cert-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        /* Interactive Certificate Visual Display */
+        .cert-preview {
+            background: var(--white);
+            border: 15px double #d4af37;
+            padding: 40px;
+            max-width: 650px;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: var(--shadow-md);
+            border-radius: 4px;
+        }
+        .cert-preview .trophy {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        .cert-preview h2 {
+            font-size: 24px;
+            color: #d4af37;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .cert-preview h3 {
+            font-size: 16px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+        .cert-name {
+            font-size: 26px;
+            font-weight: 800;
+            border-bottom: 2px solid var(--grey-medium);
+            display: inline-block;
+            padding: 5px 20px;
+            margin-bottom: 20px;
+            font-family: Georgia, serif;
+        }
+        .cert-text {
+            font-size: 14px;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cert-score {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .cert-footer-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 30px;
+            border-top: 1px solid var(--grey-medium);
+            padding-top: 15px;
+        }
+
+        /* Footer styling */
+        .footer-section {
+            background: var(--white);
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 1px solid var(--grey-medium);
+            margin-top: auto;
+        }
+        .footer-logo {
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--grey-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--grey-dark);
+            transition: var(--transition);
+        }
+        .social-link:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+        .social-link svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+        .footer-copy {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Print styling for Certificate export */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            .cert-preview, .cert-preview * {
+                visibility: visible;
+            }
+            .cert-preview {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                border: 15px double #d4af37;
+                padding: 50px;
+                box-shadow: none;
+                background-color: var(--white);
+            }
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .test-workspace {
+                flex-direction: column;
+            }
+            .palette-panel {
+                width: 100%;
+                height: 220px;
+                border-right: none;
+                border-bottom: 2px solid var(--grey-medium);
+            }
+            .controls-bar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .controls-left, .controls-right {
+                width: 100%;
+                justify-content: space-between;
+            }
+            .result-grid-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- START SCREEN -->
+    <div id="start-screen" class="start-screen">
+        <div class="start-card fade-in">
+            <div class="start-header">
+                <h1>⭐ POLAI EDUCATION HUB ⭐</h1>
+                <p>SSC CGL MOCK TEST 2026</p>
+            </div>
+            <div class="start-body">
+                <form id="start-form">
+                    <div class="form-group">
+                        <label for="candidate-name">Candidate Name (Mandatory)</label>
+                        <input type="text" id="candidate-name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="roll-number">Roll Number</label>
+                        <input type="text" id="roll-number" placeholder="Enter your roll number (optional)">
+                    </div>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span>Total Questions</span>
+                            <span>100</span>
+                        </div>
+                        <div class="info-item">
+                            <span>Total Marks</span>
+                            <span>200</span>
+                        </div>
+                        <div class="info-item">
+                            <span>Total Time</span>
+                            <span>60 Minutes</span>
+                        </div>
+                        <div class="info-item">
+                            <span>Negative Mark</span>
+                            <span>-0.50 per wrong</span>
+                        </div>
+                    </div>
+
+                    <div class="sections-list">
+                        <h3>Test Structure (4 Locked Sections of 15 Min Each)</h3>
+                        <div class="section-badge-grid">
+                            <div class="section-badge">
+                                <span>1. Reasoning</span>
+                                <span>15 Min</span>
+                            </div>
+                            <div class="section-badge">
+                                <span>2. General Awareness</span>
+                                <span>15 Min</span>
+                            </div>
+                            <div class="section-badge">
+                                <span>3. Quantitative Aptitude</span>
+                                <span>15 Min</span>
+                            </div>
+                            <div class="section-badge">
+                                <span>4. English Language</span>
+                                <span>15 Min</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-success" style="width: 100%; font-size: 16px; padding: 14px;">
+                        [ START TEST ]
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- TEST INTERFACE -->
+    <div id="test-screen" class="test-container hidden">
+        <!-- Top Header -->
+        <header class="test-header">
+            <div class="header-left">
+                <h2>⭐ POLAI EDUCATION HUB</h2>
+            </div>
+            <div class="header-center">
+                <h3>SSC CGL MOCK TEST 2026</h3>
+            </div>
+            <div class="header-right">
+                <div class="timer-box">
+                    <span>Time Left</span>
+                    <span id="section-timer" class="timer-val">15:00</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Section Navigation Tabs -->
+        <nav class="section-tabs" id="section-tabs-bar">
+            <button class="sec-tab active" id="tab-0">Reasoning</button>
+            <button class="sec-tab" id="tab-1">General Awareness</button>
+            <button class="sec-tab" id="tab-2">Quantitative Aptitude</button>
+            <button class="sec-tab" id="tab-3">English Language</button>
+        </nav>
+
+        <!-- Test Workspace -->
+        <div class="test-workspace">
+            <!-- Left Palette panel -->
+            <aside class="palette-panel">
+                <div class="palette-header">
+                    <h4 id="palette-title">Reasoning Palette</h4>
+                    <div class="legend-grid">
+                        <div class="legend-item">
+                            <div class="legend-color c-unvisited"></div>
+                            <span>Not Visited</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color c-not-answered"></div>
+                            <span>Not Answered</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color c-answered"></div>
+                            <span>Answered</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color c-review"></div>
+                            <span>Marked Review</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="palette-grid-container">
+                    <div class="palette-grid" id="palette-button-grid">
+                        <!-- Questions 1 to 25 buttons dynamically loaded -->
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Right Question Content Panel -->
+            <main class="question-panel">
+                <article class="question-card fade-in" id="active-question-card">
+                    <div class="question-number-header" id="question-header">Question 1</div>
+                    <div class="question-text" id="question-text-content">
+                        Question loading...
+                    </div>
+                    <div class="options-list" id="options-container">
+                        <!-- A B C D options dynamically loaded -->
+                    </div>
+                </article>
+
+                <!-- Footer Control Buttons Bar -->
+                <div class="controls-bar">
+                    <div class="controls-left">
+                        <button class="btn btn-warning" id="btn-review">Mark for Review & Next</button>
+                        <button class="btn btn-secondary" id="btn-clear">Clear Response</button>
+                    </div>
+                    <div class="controls-right">
+                        <button class="btn btn-outline" id="btn-prev">Previous</button>
+                        <button class="btn btn-outline" id="btn-next-nav">Next</button>
+                        <button class="btn btn-success" id="btn-save-next">Save & Next</button>
+                        <button class="btn btn-danger hidden" id="btn-submit-exam">Submit Test</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- RESULTS PAGE -->
+    <div id="result-screen" class="result-screen hidden">
+        <div class="result-container fade-in">
+            <div class="result-header">
+                <h2>SSC CGL MOCK TEST 2026 RESULTS</h2>
+                <p>⭐ POLAI EDUCATION HUB ⭐</p>
+            </div>
+            <div class="result-body">
+                
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <div id="pass-fail-status" class="pass-tag">PASS</div>
+                    <h3 style="font-size: 22px;">Candidate: <span id="res-candidate-name">Prasant Kumar</span></h3>
+                    <p style="color: var(--text-muted);" id="res-roll-number">Roll: CGL20260909</p>
+                </div>
+
+                <div class="result-grid-metrics">
+                    <div class="metric-card">
+                        <h4>Marks Obtained</h4>
+                        <p id="res-marks">124.5 / 200</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Correct Answers</h4>
+                        <p id="res-correct" style="color: var(--success);">65</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Wrong Answers</h4>
+                        <p id="res-wrong" style="color: var(--danger);">11</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Accuracy</h4>
+                        <p id="res-accuracy">85%</p>
+                    </div>
+                </div>
+
+                <div class="result-grid-metrics">
+                    <div class="metric-card">
+                        <h4>Total Attempted</h4>
+                        <p id="res-attempted">76 / 100</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Total Time Taken</h4>
+                        <p id="res-time-taken">52 Min 10 Sec</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Total Score Percent</h4>
+                        <p id="res-percentage">62.25 %</p>
+                    </div>
+                    <div class="metric-card">
+                        <h4>Status</h4>
+                        <p id="res-status-text">Qualified</p>
+                    </div>
+                </div>
+
+                <div class="section-analysis">
+                    <h3>Section-Wise Performance Analysis</h3>
+                    <table class="analysis-table">
+                        <thead>
+                            <tr>
+                                <th>Section</th>
+                                <th>Correct</th>
+                                <th>Incorrect</th>
+                                <th>Unattempted</th>
+                                <th>Section Score</th>
+                            </tr>
+                        </thead>
+                        <tbody id="section-analysis-body">
+                            <!-- Dynamically updated -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Custom SVG Charts -->
+                <div class="charts-container">
+                    <div class="chart-box">
+                        <h4>Overall Accuracy Details (Pie Chart)</h4>
+                        <div style="display: flex; justify-content: center; align-items: center; height: 180px;">
+                            <svg width="180" height="180" viewBox="0 0 100 100" id="pie-chart-svg">
+                                <!-- Draw circle sectors dynamically -->
+                            </svg>
+                        </div>
+                        <div style="display:flex; justify-content:center; gap: 15px; font-size: 12px; margin-top:10px;">
+                            <span style="display:flex; align-items:center; gap:5px;"><span style="width:10px; height:10px; background-color: var(--success);"></span>Correct</span>
+                            <span style="display:flex; align-items:center; gap:5px;"><span style="width:10px; height:10px; background-color: var(--danger);"></span>Wrong</span>
+                            <span style="display:flex; align-items:center; gap:5px;"><span style="width:10px; height:10px; background-color: var(--grey-medium);"></span>Skipped</span>
+                        </div>
+                    </div>
+                    <div class="chart-box">
+                        <h4>Section Marks Analysis (Bar Chart)</h4>
+                        <div style="display: flex; justify-content: center; align-items: flex-end; height: 180px; padding-bottom: 10px;" id="bar-chart-container">
+                            <!-- Draw bars dynamically using HTML elements or SVGs -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate Visualizer -->
+                <div class="certificate-section">
+                    <h3>🎖️ YOUR ACHIEVEMENT CERTIFICATE 🎖️</h3>
+                    <p style="margin-bottom: 20px; color: var(--text-muted);">Congratulations on completing the all India CGL mock series test.</p>
+                    
+                    <div class="cert-preview" id="certificate-print-area">
+                        <div class="trophy">🏆</div>
+                        <h2>POLAI EDUCATION HUB</h2>
+                        <h3>Certificate of Completion</h3>
+                        <p class="cert-text">This certifies that</p>
+                        <div class="cert-name" id="cert-candidate-name">CANDIDATE NAME</div>
+                        <p class="cert-text">has successfully completed the</p>
+                        <h4 style="font-size: 18px; font-weight:700; margin-bottom: 15px; letter-spacing: 1px;">SSC CGL MOCK TEST 2026</h4>
+                        <div class="cert-score" id="cert-score-text">Score: 0 / 200 (0.00%)</div>
+                        
+                        <div class="cert-footer-info">
+                            <div>
+                                <strong>Date Generated:</strong>
+                                <span id="cert-date">18-06-2026</span>
+                            </div>
+                            <div>
+                                <strong>YouTube Channel:</strong>
+                                <span>Polai Education Hub</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-actions">
+                        <button class="btn btn-success" id="btn-download-png">Download PNG</button>
+                        <button class="btn btn-primary" id="btn-download-pdf">Download PDF (Print)</button>
+                    </div>
+                </div>
+
+                <!-- Back to Home -->
+                <div style="text-align: center; margin-top: 30px;">
+                    <button class="btn btn-outline" onclick="location.reload();">Take Test Again</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer-section">
+        <div class="footer-logo">⭐ POLAI EDUCATION HUB ⭐</div>
+        <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 10px;">YouTube Channel: Polai Education Hub</p>
+        <div class="social-icons">
+            <!-- YouTube Icon -->
+            <a href="https://youtube.com/@PolaiEducationHub" target="_blank" class="social-link" title="Subscribe on YouTube">
+                <svg viewBox="0 0 24 24"><path d="M23.498 6.163a3.003 3.003 0 0 0-2.11-2.11C19.518 3.545 12 3.545 12 3.545s-7.518 0-9.388.508a3.003 3.003 0 0 0-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 0 0 2.11 2.11c1.87.508 9.388.508 9.388.508s7.518 0 9.388-.508a3.003 3.003 0 0 0 2.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <!-- Telegram Icon -->
+            <a href="https://t.me/PolaiEducationHub" target="_blank" class="social-link" title="Join on Telegram">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.94-4.22 2.78-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.37.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .24z"/></svg>
+            </a>
+            <!-- WhatsApp Icon -->
+            <a href="https://wa.me/917231980003" target="_blank" class="social-link" title="Contact on WhatsApp">
+                <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.498 1.452 5.411 1.453 5.476 0 9.932-4.437 9.935-9.873.001-2.633-1.02-5.107-2.876-6.966C17.26 1.907 14.8 1.861 12.01 1.86c-5.48 0-9.939 4.437-9.939 9.875-.001 2.052.541 4.054 1.568 5.802l-.994 3.633 3.74-.976zm11.233-7.502c-.3-.149-1.772-.871-2.046-.971-.274-.1-.474-.149-.674.15-.2.298-.774.971-.949 1.171-.174.199-.349.224-.649.075-.3-.15-1.264-.465-2.408-1.482-.89-.791-1.49-1.77-1.664-2.068-.174-.299-.018-.46.131-.609.135-.134.3-.349.449-.523.15-.174.2-.298.3-.498.1-.2.05-.374-.025-.523-.075-.149-.674-1.62-.923-2.219-.242-.58-.488-.5-.674-.51-.174-.007-.374-.007-.574-.007s-.524.075-.798.374c-.274.299-1.047 1.022-1.047 2.493 0 1.47 1.072 2.89 1.222 3.09.15.199 2.11 3.22 5.11 4.516.714.309 1.272.493 1.706.63.717.228 1.37.196 1.885.119.574-.087 1.772-.724 2.022-1.42.25-.697.25-1.295.174-1.42-.075-.125-.274-.199-.574-.349z"/></svg>
+            </a>
+        </div>
+        <p class="footer-copy">Copyright © 2026 POLAI EDUCATION HUB. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JS Core Engine & 100 Questions Database -->
+    <script>
+        // WEB AUDIO OFFLINE SOUNDS CONTROLLER
+        class SoundSynth {
+            constructor() {
+                this.ctx = null;
+            }
+            init() {
+                if (!this.ctx) {
+                    this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+            }
+            playClick() {
+                this.init();
+                const now = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(800, now);
+                gain.gain.setValueAtTime(0.08, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.04);
+                osc.start(now);
+                osc.stop(now + 0.04);
+            }
+            playBeep() {
+                this.init();
+                const now = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(1000, now);
+                gain.gain.setValueAtTime(0.12, now);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+                osc.start(now);
+                osc.stop(now + 0.15);
+            }
+            playSuccess() {
+                this.init();
+                const now = this.ctx.currentTime;
+                // Double chime chord
+                const notes = [523.25, 659.25]; // C5, E5
+                notes.forEach((freq, idx) => {
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, now + idx * 0.1);
+                    gain.gain.setValueAtTime(0.08, now + idx * 0.1);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.1 + 0.35);
+                    osc.start(now + idx * 0.1);
+                    osc.stop(now + idx * 0.1 + 0.35);
+                });
+            }
+            playCelebration() {
+                this.init();
+                const now = this.ctx.currentTime;
+                // Fanfare melody
+                const melody = [
+                    { f: 523.25, d: 0.12, t: 0 },    // C5
+                    { f: 659.25, d: 0.12, t: 0.12 }, // E5
+                    { f: 783.99, d: 0.12, t: 0.24 }, // G5
+                    { f: 1046.50, d: 0.45, t: 0.36 } // C6
+                ];
+                melody.forEach(note => {
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(note.f, now + note.t);
+                    gain.gain.setValueAtTime(0.08, now + note.t);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + note.t + note.d);
+                    osc.start(now + note.t);
+                    osc.stop(now + note.t + note.d);
+                });
+            }
+        }
+
+        const audio = new SoundSynth();
+
+        // 100 SSC CGL QUESTIONS DATABASE
+        const questions = [
+            // ==================== SECTION 1: REASONING (Q1 - Q25) ====================
+            {
+                id: 1,
+                section: "Reasoning",
+                question: "In a code language, 'WRITE' is coded as D60X and 'APPLE' is coded as D35B. How will 'BASIS' be coded in the same language?<br><br>एक कूट भाषा में, 'WRITE' को D60X और 'APPLE' को D35B के रूप में कूटबद्ध किया जाता है। उसी कूट भाषा में 'BASIS' को किस प्रकार कूटबद्ध किया जाएगा?",
+                options: ["(a) T37A", "(b) T35A", "(c) R35C", "(d) R37C"],
+                answer: "C"
+            },
+            {
+                id: 2,
+                section: "Reasoning",
+                question: "Select the number from among the given options that can replace the question mark (?) in the following table:<br><br>दिए गए विकल्पों में से उस संख्या का चयन कीजिए जो निम्नलिखित तालिका में प्रश्न चिन्ह (?) को प्रतिस्थापित कर सके:<br><table border='1' style='border-collapse:collapse; text-align:center; width:150px; margin: 15px auto;'><tr><td style='padding:6px;'>2</td><td style='padding:6px;'>10</td><td style='padding:6px;'>18</td></tr><tr><td style='padding:6px;'>3</td><td style='padding:6px;'>30</td><td style='padding:6px;'>84</td></tr><tr><td style='padding:6px;'>4</td><td style='padding:6px;'>68</td><td style='padding:6px;'>?</td></tr></table>",
+                options: ["(a) 264", "(b) 256", "(c) 260", "(d) 512"],
+                answer: "C"
+            },
+            {
+                id: 3,
+                section: "Reasoning",
+                question: "Given question has main statement followed by four statements. Choose the ordered pair of statements, where the first statement implies the second, and the two statements are logically consistent with the main statement.<br><br>दिए गए प्रश्न में, मुख्य कथन के बाद चार कथन दिए गए हैं। कथनों के क्रमबद्ध युग्म का चयन कीजिए, जहाँ पहला कथन, दूसरे कथन का तात्पर्य है, और दोनों कथन तार्किक रूप से मुख्य कथन के तर्कसंगत हैं।<br><br><b>Main Statement:</b> If you engage in creative activities, your problem-solving skills will improve.<br><b>मुख्य कथन:</b> यदि आप रचनात्मक गतिविधियों में संलग्न हैं, तो आपकी समस्या-समाधान कौशल में सुधार होगा।<br><br>A. You didn't engage in creative activities.<br>B. Your problem-solving skills improved.<br>C. You engaged in creative activities.<br>D. Your problem-solving skills didn't improve.",
+                options: ["(a) AB", "(b) CD", "(c) AD", "(d) BA"],
+                answer: "C"
+            },
+            {
+                id: 4,
+                section: "Reasoning",
+                question: "Select the option that is related to the third set of numbers in the same way as the second set is related to the first set:<br><br>उस विकल्प का चयन कीजिए जो संख्याओं के तीसरे सेट से उसी प्रकार संबंधित है जैसे दूसरा सेट पहले सेट से संबंधित है:<br><br>(11, 891, 9) :: (7, 1183, 13) :: (?, ?, ?)",
+                options: ["(a) (9, 729, 15)", "(b) (10, 640, 8)", "(c) (15, 1024, 17)", "(d) (14, 581, 21)"],
+                answer: "B"
+            },
+            {
+                id: 5,
+                section: "Reasoning",
+                question: "Consider a 6-digit number of the form XYXYXY. The number is always divisible by:<br><br>XYXYXY के रूप में 6-अंकीय संख्या के बारे में विचार कीजिए। यह संख्या हमेशा विभाजित होती है:",
+                options: ["(a) 3 and 7 only / केवल 3 और 7 से", "(b) 7 and 13 only / केवल 7 और 13 से", "(c) 3, 13 and 37 only / केवल 3, 13 और 37 से", "(d) 3, 7, 13 and 37 / 3, 7, 13 और 37 से"],
+                answer: "D"
+            },
+            {
+                id: 6,
+                section: "Reasoning",
+                question: "Evaluate the following expression:<br><br>निम्नलिखित व्यंजक का मान ज्ञात कीजिए:<br><br><strong>|10 &times; (20 &divide; 2) - 50 + 20 &times; 5| mod 8</strong>",
+                options: ["(a) 6", "(b) 7", "(c) 0", "(d) 5"],
+                answer: "A"
+            },
+            {
+                id: 7,
+                section: "Reasoning",
+                question: "Select the number from among the given options that can replace the question mark (?) in the following series:<br><br>दिए गए विकल्पों में से उस संख्या का चयन कीजिए जो निम्नलिखित श्रृंखला में प्रश्न चिन्ह (?) को प्रतिस्थापित कर सके:<br><br>1, 0, 2, 1, 3, 2, 4, 5, 5, 26, ?, 677",
+                options: ["(a) 47", "(b) 26", "(c) 52", "(d) 6"],
+                answer: "D"
+            },
+            {
+                id: 8,
+                section: "Reasoning",
+                question: "Direction: Given below is a statement followed by two arguments numbered I and II. You have to decide which of the arguments is the 'strong' argument and which is the 'weak' argument.<br><br>निर्देश: नीचे एक कथन दिया गया है जिसके बाद दो तर्क I और II दिए गए हैं। आपको यह तय करना है कि कौन सा तर्क 'प्रबल' है और कौन सा 'दुर्बल' तर्क है।<br><br><b>Statement:</b> Is Artificial Intelligence good for our economy?<br><b>कथन:</b> क्या कृत्रिम बुद्धिमत्ता (आर्टिफिशियल इंटेलिजेंस) हमारी अर्थव्यवस्था के लिए उचित है?<br><br><b>Argument I:</b> Yes, with the use of artificial intelligence one can do his/her work easily and efficiently.<br><b>तर्क I:</b> हाँ, कृत्रिम बुद्धिमत्ता के प्रयोग से कोई भी व्यक्ति अपना काम आसानी से और कुशलता से कर सकता है।<br><b>Argument II:</b> No, with the use of an artificial system, one can lose their job.<br><b>तर्क II:</b> नहीं, कृत्रिम प्रणाली के उपयोग से कोई अपनी नौकरी खो सकता है.",
+                options: ["(a) Only argument I is strong. / केवल तर्क I प्रबल है।", "(b) Only argument II is strong. / केवल तर्क II प्रबल है।", "(c) Either I or II is strong. / या तो I या II प्रबल है।", "(d) Both I and II are strong. / I और II दोनों प्रबल हैं।"],
+                answer: "D"
+            },
+            {
+                id: 9,
+                section: "Reasoning",
+                question: "R, N, O, W, Q and C are sitting around a circular table facing inside the center. R is sitting immediately to the left of W, who is facing O. O is sitting immediately to the left of N. C is not an immediate neighbor of W. Who is sitting to the left of Q?<br><br>R, N, O, W, Q और C केंद्र की ओर उन्मुख होकर एक वृत्ताकार मेज के चारों ओर बैठे हैं। R, W के निकटतम बाएं बैठा है जो O के सम्मुख है, O, N के निकटतम बाएं बैठा है। C, W का निकटतम पड़ोसी नहीं है। Q के बाईं ओर कौन बैठा है?",
+                options: ["(a) O", "(b) W", "(c) R", "(d) C"],
+                answer: "B"
+            },
+            {
+                id: 10,
+                section: "Reasoning",
+                question: "What is the number of straight lines in the following figure?<br><br>निम्नलिखित आकृति में सीधी रेखाओं की संख्या कितनी है?<br><br><div style='text-align:center;'><svg width='240' height='130' style='background:#fff; border:1px solid #ccc; padding:10px;'><line x1='10' y1='10' x2='150' y2='10' stroke='#000' stroke-width='2'/><line x1='10' y1='110' x2='150' y2='110' stroke='#000' stroke-width='2'/><line x1='10' y1='10' x2='10' y2='110' stroke='#000' stroke-width='2'/><line x1='150' y1='10' x2='150' y2='110' stroke='#000' stroke-width='2'/><line x1='80' y1='10' x2='80' y2='110' stroke='#000' stroke-width='2'/><line x1='10' y1='60' x2='220' y2='60' stroke='#000' stroke-width='2'/><line x1='10' y1='10' x2='150' y2='110' stroke='#000' stroke-width='2'/><line x1='10' y1='110' x2='150' y2='10' stroke='#000' stroke-width='2'/><line x1='150' y1='10' x2='220' y2='60' stroke='#000' stroke-width='2'/><line x1='150' y1='110' x2='220' y2='60' stroke='#000' stroke-width='2'/></svg></div>",
+                options: ["(a) 12", "(b) 10", "(c) 16", "(d) 24"],
+                answer: "A"
+            },
+            {
+                id: 11,
+                section: "Reasoning",
+                question: "In a certain code language, if EXTRNSIC is written as CIXESNRT, then how will LEFTWING be written in the same code language?<br><br>एक निश्चित कूट भाषा में, यदि EXTRNSIC को CIXESNRT के रूप में लिखा जाता है, तो समान कूट भाषा में LEFTWING को किस प्रकार लिखा जाएगा?",
+                options: ["(a) ELGNTFIW", "(b) GNIWTFEL", "(c) TFELGNIW", "(d) GNELIWTF"],
+                answer: "D"
+            },
+            {
+                id: 12,
+                section: "Reasoning",
+                question: "Select the odd word from the given alternatives:<br><br>दिए गए विकल्पों में से बेजोड़ शब्द का चयन कीजिये:",
+                options: ["(a) Egypt / मिस्र", "(b) Spain / स्पेन", "(c) Newyork / न्यूयॉर्क", "(d) France / फ्रांस"],
+                answer: "C"
+            },
+            {
+                id: 13,
+                section: "Reasoning",
+                question: "Consider the following statements:<br>1. All artists are whimsical.<br>2. Some artists are drug addicts.<br>3. Frustrated people are prone to become drug addicts.<br><br>From the above three statements, it may be concluded that:<br><br>निम्नलिखित कथनों पर विचार कीजिये:<br>1. सभी कलाकार सनकी हैं।<br>2. कुछ कलाकार ड्रग एडिक्ट हैं।<br>3. निराश लोग नशा करने वाले होते हैं।<br><br>उपरोक्त तीन कथनों से यह निष्कर्ष निकाला जा सकता है कि:",
+                options: ["(a) Artists are frustrated / कलाकार निराश हैं", "(b) Some drug addicts are whimsical / कुछ नशा करने वाले सनकी हैं", "(c) All frustrated people are drug addicts / सभी निराश लोग ड्रग एडिक्ट हैं", "(d) Whimsical people are generally frustrated / सनकी लोग आमतौर पर निराश होते हैं"],
+                answer: "B"
+            },
+            {
+                id: 14,
+                section: "Reasoning",
+                question: "Find the wrong term in the following series:<br><br>निम्नलिखित श्रृंखला में गलत पद ज्ञात कीजिए:<br><br><strong>IDZWU, SPMK, JGE, DB, A</strong>",
+                options: ["(a) IDZWU", "(b) SPMK", "(c) JGE", "(d) DB"],
+                answer: "B"
+            },
+            {
+                id: 15,
+                section: "Reasoning",
+                question: "A + B means A is the father of B. A - B means A is the mother of B. A &times; B means A is the brother of B. A &divide; B means A is the sister of B. If P + Q &times; R - S &divide; T is given, which of the following statement(s) is/are correct?<br>I. T is the son of R.<br>II. P is the paternal grandfather of S.<br><br>P + Q &times; R - S &divide; T दिया गया है, तो निम्नलिखित में से कौन-सा/से कथन सही है/हैं?<br>I. T, R का पुत्र है।<br>II. P, S का दादा है।",
+                options: ["(a) Neither I nor II / न तो I और न ही II", "(b) Both I and II / I और II दोनों", "(c) Only II / केवल II", "(d) Only I / केवल I"],
+                answer: "A"
+            },
+            {
+                id: 16,
+                section: "Reasoning",
+                question: "Pointing to a lady in a photograph, Vijay said 'Her sister's mother is the sister of my father's daughter.' How is the lady related to Vijay?<br><br>एक तस्वीर में एक महिला की ओर इशारा करते हुए, विजय ने कहा, 'उसकी बहन की माता, मेरे पिता की पुत्री की बहन है।' वह महिला, विजय से किस प्रकार संबंधित है?",
+                options: ["(a) Mother / माता", "(b) Sister's daughter / बहन की पुत्री", "(c) Daughter / पुत्री", "(d) Sister / बहन"],
+                answer: "B"
+            },
+            {
+                id: 17,
+                section: "Reasoning",
+                question: "Two statements are given, followed by three conclusions numbered I, II and III. Assuming the statements to be true, even if they seem to be at variance with commonly known facts, decide which of the conclusions logically follow(s) from the statements.<br><br><b>Statements:</b> All products are useful. No useful is tough.<br><b>Conclusions:</b> I. No product is tough. II. Some useful are products. III. No useful is product.<br><br><b>कथन:</b> सभी उत्पाद उपयोगी हैं। कोई उपयोगी कठिन नहीं है।<br><b>निष्कर्ष:</b> I. कोई उत्पाद कठिन नहीं है। II. कुछ उपयोगी उत्पाद हैं। III. कोई उपयोगी उत्पाद नहीं है।",
+                options: ["(a) Only Conclusion II follows", "(b) Either Conclusion II or III follows", "(c) Only Conclusion I and II follow", "(d) Only Conclusion I and either II or III follow"],
+                answer: "C"
+            },
+            {
+                id: 18,
+                section: "Reasoning",
+                question: "Given is an address, which has been reproduced against the four alternatives. Of these, only one matches the given address, whereas the others have some mistakes. Select the option that is exactly the same as the given one.<br><br>एक पता दिया गया है जिसे चार विकल्पों में दोबारा प्रस्तुत किया गया है। इनमें से केवल एक विकल्प दिए गए पते से मेल खाता है, जबकि अन्य तीनों में कुछ गलतियाँ हैं। उस विकल्प का चयन करें जो पूर्णतः दिए गए पते के समान है।<br><br><b>Given Address:</b> Hansen Technical Devices, C-728, CROM Tech Park, 8th Building, Sector-29B, Thane East, Thane, Maharashtra 400615, India",
+                options: [
+                    "(a) Hansen Technical Devices, C-728, CRON Tech Park, 8th Building, Sector-29B, Thane East, Thane, Maharashtra 400615, India",
+                    "(b) Hansen Technical Devices, C-728, CROM Tech Park, 9th Building, Sector-29B, Thane East, Thane, Maharashtra 400615, India",
+                    "(c) Hansen Technical Devices, C-728, CROM Tech Park, 8th Building, Sector-29B, Thane East, Thane, Maharashtra 400615, India",
+                    "(d) Hansen Technical Devices, C-728, CROM Tech Park, 8th Building, Sector-29D, Thane East, Thane, Maharashtra 400615, India"
+                ],
+                answer: "C"
+            },
+            {
+                id: 19,
+                section: "Reasoning",
+                question: "H has three times as many cards as R has. If H gives 50 cards to R, R will have three times as many cards as H has. How many cards does H have?<br><br>H के पास R से तीन गुना कार्ड हैं। यदि H, R को 50 कार्ड देता है, तो R के पास H से तीन गुना कार्ड हो जाएँगे। H के पास कुल कितने कार्ड हैं?",
+                options: ["(a) 25", "(b) 100", "(c) 50", "(d) 75"],
+                answer: "D"
+            },
+            {
+                id: 20,
+                section: "Reasoning",
+                question: "Two statements are given below, followed by four conclusions. Find which conclusion is true based on the given statements.<br><br>दो कथन दिए गए हैं, जिसके बाद निष्कर्ष दिए गए हैं। दिए गए कथनों के आधार पर ज्ञात कीजिए कि कौन-सा निष्कर्ष सत्य है।<br><br><b>Statements:</b> J &lt; P &lt; C; T &lt; Q &lt; M = J &lt; A",
+                options: ["(a) A &gt; P", "(b) C = A", "(c) P &gt; A", "(d) T &lt; A"],
+                answer: "D"
+            },
+            {
+                id: 21,
+                section: "Reasoning",
+                question: "Study the following information carefully and answer the question given below. Here are some of the words translated from an artificial language:<br><i>If</i> <strong>rasp hun</strong> means breaking dawn;<br><strong>rib pute</strong> means throw away;<br><strong>rib pute hun</strong> means throw away dawn;<br><br>Which word may represent the meaning of \"throw ball\"?<br><br>निम्नलिखित जानकारी का ध्यानपूर्वक अध्ययन करें और उत्तर दें। यहाँ कृत्रिम भाषा से अनूदित कुछ शब्द दिए गए हैं:<br>यदि <i>rasp hun</i> का अर्थ breaking dawn है,<br><i>rib pute</i> का अर्थ throw away है,<br><i>rib pute hun</i> का अर्थ throw away dawn है,<br>तो कौन-सा शब्द \"throw ball\" का प्रतिनिधित्व कर सकता है?",
+                options: ["(a) garrpute", "(b) puterasp", "(c) ribhun", "(d) ribcopr"],
+                answer: "D"
+            },
+            {
+                id: 22,
+                section: "Reasoning",
+                question: "Select the option in which the numbers share the same relationship in set as that shared by the numbers in the given set. (NOTE: Operations should be performed on the whole numbers, without breaking down the numbers into its constituent digits. E.g. 13 - Operations on 13 such as adding/subtracting/multiplying etc. to 13 can be performed. Breaking down 13 into 1 and 3 and then performing mathematical operations on 1 and 3 is not allowed)<br><br>उस विकल्प का चयन कीजिए जिसमें संख्याएँ दिए गए समूह में साझा किए गए संबंधों के समान संबंध साझा करती हैं। (नोट: संख्या को उसके घटक अंकों में तोड़े बिना, पूर्ण संख्याओं पर गणितीय संक्रियाएं करनी हैं।)<br><br><strong>(17, 12, 10) :: (25, 23, 4) :: (?, ?, ?)</strong>",
+                options: ["(a) (9, 15, 15)", "(b) (31, 27, 8)", "(c) (28, 42, 12)", "(d) (18, 17, 3)"],
+                answer: "B"
+            },
+            {
+                id: 23,
+                section: "Reasoning",
+                question: "How many different 5-letter words (with or without meaning) can be constructed using all the letters of the word 'DELHI' so that each word has to start with D and end with I?<br><br>'DELHI' शब्द के सभी अक्षरों का उपयोग करके कितने अलग-अलग 5-अक्षर वाले शब्द (अर्थ के साथ या बिना) बनाए जा सकते हैं, ताकि प्रत्येक शब्द D से शुरू हो और I के साथ समाप्त हो?",
+                options: ["(a) 24", "(b) 18", "(c) 12", "(d) 6"],
+                answer: "D"
+            },
+            {
+                id: 24,
+                section: "Reasoning",
+                question: "Find how many meaningful word can be formed from the 1st, 4th, 9th and 10th letter of the word \"CORRUPTION\".<br><br>\"CORRUPTION\" शब्द के पहले, चौथे, नौवें और दसवें अक्षर से कितने अर्थपूर्ण शब्द बन सकते हैं?",
+                options: ["(a) One / एक", "(b) Two / दो", "(c) Three / तीन", "(d) None / एक भी नहीं"],
+                answer: "A"
+            },
+            {
+                id: 25,
+                section: "Reasoning",
+                question: "Soumya is 17th from the left end and 13th to the right of Kiran who is 37th from the right end of a row. If all of them are facing North, find out the total number of persons in the row.<br><br>सौम्या बाएं छोर से 17वें स्थान पर है, और किरण जो दाएं छोर से 37वें स्थान पर है, के दाईं ओर 13वें स्थान पर है। यदि वे सभी उत्तर दिशा की ओर उन्मुख हैं, तो पंक्ति में व्यक्तियों की कुल संख्या ज्ञात कीजिए।",
+                options: ["(a) 41", "(b) 40", "(c) 44", "(d) 43"],
+                answer: "B"
+            },
+
+            // ==================== SECTION 2: GENERAL AWARENESS (Q26 - Q50) ====================
+            {
+                id: 26,
+                section: "General Awareness",
+                question: "With which of the following games are the terms \"Bunker\" and \"Chukker\" associated?<br><br>'बंकर' और 'चक्कर' शब्द निम्नलिखित में से किस खेल से संबंधित हैं?",
+                options: ["(a) Draughts / ड्राफ्ट", "(b) Skiing / स्कीइंग", "(c) Polo / पोलो", "(d) Rowing / रोइंग"],
+                answer: "C"
+            },
+            {
+                id: 27,
+                section: "General Awareness",
+                question: "Identify the initiative based on the following characteristics:<br>I. It is a transcontinental connectivity project launched through a Memorandum of Understanding during the G20 Summit 2023, involving India, the US, Saudi Arabia, the UAE, France, Germany, Italy, and the European Union.<br>II. It aims to develop an integrated network of ports, railways, roads, sea lines, energy pipelines, and digital infrastructure to enhance trade between India, the Middle East, and Europe.<br>III. The initiative is a part of the Partnership for Global Infrastructure and Investment (PGII), launched by the G7 in 2021.<br><br>निम्नलिखित विशेषताओं के आधार पर पहल की पहचान कीजिए:<br>I. यह 2023 के G20 शिखर सम्मेलन के दौरान भारत, अमेरिका, सऊदी अरब, यूएई, फ्रांस, जर्मनी, इटली और यूरोपीय संघ को शामिल करने वाले एक समझौता ज्ञापन के माध्यम से शुरू की गई एक अंतरमहाद्वीपीय संपर्क परियोजना है।<br>II. इसका उद्देश्य भारत, मध्य पूर्व और यूरोप के बीच व्यापार को बढ़ावा देने के लिए बंदरगाहों, रेलवे, सड़कों, समुद्री मार्गों, ऊर्जा पाइपलाइनों और डिजिटल बुनियादी ढांचे के एक एकीकृत नेटवर्क का विकास करना है।<br>III. यह पहल 2021 में G7 द्वारा शुरू की गई ग्लोबल इंफ्रास्ट्रक्चर एंड इन्वेस्टमेंट (PGII) की साझेदारी का हिस्सा है।",
+                options: [
+                    "(a) Indo-Pacific Economic Framework / इंडो-पैसिफिक आर्थिक ढांचा",
+                    "(b) India-Middle East-Europe Economic Corridor / भारत-मध्य पूर्व-यूरोप आर्थिक गलियारा",
+                    "(c) International North-South Transport Corridor / अंतर्राष्ट्रीय उत्तर-दक्षिण परिवहन गलियारा",
+                    "(d) Kaladan Multimodal Transit Transport Project / कलादान मल्टीमॉडल ट्रांजिट ट्रांसपोर्ट परियोजना"
+                ],
+                answer: "B"
+            },
+            {
+                id: 28,
+                section: "General Awareness",
+                question: "Match the following Committees of the Constituent Assembly with their respective chairmen:<br>1. Advisory Committee on Fundamental Rights -> A. Vallabhbhai Patel<br>2. Committee on the Rules of Procedure -> B. Jawaharlal Nehru<br>3. States Committee -> C. K.M. Munshi<br>4. Order of Business Committee -> D. Rajendra Prasad<br><br>संविधान सभा की निम्नलिखित समितियों का उनके संबंधित अध्यक्षों से मिलान कीजिए:<br>1. मौलिक अधिकारों पर सलाहकार समिति -> A. वल्लभभाई पटेल<br>2. प्रक्रिया के नियमों पर समिति -> B. विभाजन समिति (Rajendra Prasad / States Committee -> Jawaharlal Nehru)<br>3. राज्य समिति -> B. जवाहरलाल नेहरू<br>4. कार्य संचालन समिति -> C. के.एम. मुंशी",
+                options: [
+                    "(a) 1-A, 2-D, 3-B, 4-C",
+                    "(b) 1-C, 2-D, 3-B, 4-A",
+                    "(c) 1-D, 2-B, 3-A, 4-C",
+                    "(d) 1-B, 2-C, 3-A, 4-D"
+                ],
+                answer: "A"
+            },
+            {
+                id: 29,
+                section: "General Awareness",
+                question: "The event organized under the initiative 'Hamari Parampara Hamari Virasat' is dedicated to which of the following?<br><br>'हमारी परंपरा हमारी विरासत' पहल के तहत आयोजित कार्यक्रम निम्नलिखित में से किसे समर्पित है?",
+                options: [
+                    "(a) 100th Birth Anniversary of Subhas Chandra Bose / सुभाष चंद्र बोस की 100वीं जयंती",
+                    "(b) 150th Birth Anniversary of Bhagwan Birsa Munda / भगवान बिरसा मुंडा की 150वीं जयंती",
+                    "(c) 175th Birth Anniversary of Badruddin Tyabji / बदरुद्दीन तैयबजी की 175वीं जयंती",
+                    "(d) 200th Birth Anniversary of Rani Lakshmi Bai / रानी लक्ष्मी बाई की 200वीं जयंती"
+                ],
+                answer: "B"
+            },
+            {
+                id: 30,
+                section: "General Awareness",
+                question: "Which of the following statements is not correct regarding the 'Social Market Economy'?<br><br>निम्नलिखित में से कौन सा कथन 'सामाजिक बाजार अर्थव्यवस्था' के संबंध में सही नहीं है?",
+                options: [
+                    "(a) It is implemented in 1948 by the Federal Republic of Germany. / यह 1948 में जर्मनी के संघीय गणराज्य द्वारा लागू किया गया था।",
+                    "(b) It is the state that explicitly guarantees the social and economic order, based on liberalism, which requires a state with strong regulatory authority. / यह राज्य है जो उदारवाद पर आधारित सामाजिक और आर्थिक व्यवस्था की स्पष्ट रूप से गारंटी देता है, जिसके लिए मजबूत नियामक प्राधिकरण वाले राज्य की आवश्यकता होती है।",
+                    "(c) The social market economy was designed for growth but it is completely similar to capitalism. / सामाजिक बाजार अर्थव्यवस्था को विकास के लिए डिज़ाइन किया गया था लेकिन यह पूरी तरह से पूंजीवाद के समान है।",
+                    "(d) Ludwig Erhard forged the concept of social market economy. / लुडविग एरहार्ड ने सामाजिक बाजार अर्थव्यवस्था की अवधारणा को प्रतिपादित किया।"
+                ],
+                answer: "C"
+            },
+            {
+                id: 31,
+                section: "General Awareness",
+                question: "Given below are two statements marked as Assertion (A) and Reason (R). Read and mark the correct options:<br><br>नीचे दो कथन दिए गए हैं, जिन्हें अभिकथन (A) और कारण (R) के रूप में चिह्नित किया गया है। सही विकल्पों को पढ़ें और चिह्नित करें:<br><br><b>Assertion (A):</b> The Bharatiya Nagarık Suraksha Sanhita, 2023, promotes e-filing and virtual trials to expedite the justice delivery system.<br><b>Reason (R):</b> The integration of technology aims to reduce case pendency and enhance accessibility to justice.<br><br><b>अभिकथन (A):</b> भारतीय नागरिक सुरक्षा संहिता, 2023, न्याय वितरण प्रणाली में तेजी लाने के लिए ई-फाइलिंग और वर्चुअल ट्रायल को बढ़ावा देती है।<br><b>कारण (R):</b> प्रौद्योगिकी के एकीकरण का उद्देश्य लंबित मामलों को कम करना और न्याय तक पहुंच को बढ़ाना है।",
+                options: [
+                    "(a) Both A and R are true, and R is the correct explanation of A. / A और R दोनों सत्य हैं, तथा R, A का सही स्पष्टीकरण है।",
+                    "(b) A is false, but R is true. / A असत्य है, लेकिन R सत्य है।",
+                    "(c) Both A and R are true, but R is NOT the correct explanation of A. / A और R दोनों सत्य हैं, लेकिन R, A का सही स्पष्टीकरण नहीं है।",
+                    "(d) A is true, but R is false. / A सत्य है, लेकिन R असत्य है।"
+                ],
+                answer: "A"
+            },
+            {
+                id: 32,
+                section: "General Awareness",
+                question: "Consider the following phenomenon:<br>1. Flattening of the sun's disc at sunrise and sunset.<br>2. Reddening of the sun at sunrise and sunset.<br>3. Formation of a rainbow in a direction opposite to that of the sun.<br><br>Which of the above cases is/are due to ONLY the atmospheric refraction of sunlight?<br><br>निम्नलिखित परिघटनाओं पर विचार कीजिए:<br>1. सूर्योदय और सूर्यास्त के समय सूर्य की डिस्क का चपटा होना।<br>2. सूर्योदय और सूर्यास्त के समय सूर्य का लाल होना।<br>3. सूर्य के विपरीत दिशा में इंद्रधनुष का बनना।<br><br>उपरोक्त में से कौन-सा मामला केवल सूर्य के प्रकाश के वायुमंडलीय अपवर्तन के कारण है?",
+                options: ["(a) 1 only / केवल 1", "(b) 1 and 2 only / 1 और 2", "(c) 2 only / केवल 2", "(d) 3 only / केवल 3"],
+                answer: "A"
+            },
+            {
+                id: 33,
+                section: "General Awareness",
+                question: "Consider the following pairs of foreign travellers and the Indian rulers/kingdoms they visited:<br>1. Megasthenes : Chandragupta Maurya<br>2. Fa-Hien : Chandragupta II (Vikramaditya)<br>3. Hiuen Tsang : Harshavardhana<br><br>How many of the above pairs is/are correctly matched?<br><br>विदेशी यात्रियों और उनके द्वारा भ्रमण किए गए भारतीय शासकों/राज्यों के निम्नलिखित युग्मों पर विचार करें:<br>1. मेगास्थनीज : चंद्रगुप्त मौर्य<br>2. फाह्यान : चंद्रगुप्त द्वितीय (विक्रमादित्य)<br>3. ह्वेनसांग : हर्षवर्धन<br><br>उपरोक्त में से कितने युग्म सही सुमेलित हैं?",
+                options: ["(a) Only one / केवल एक", "(b) Only two / केवल दो", "(c) All three / तीनों", "(d) None / कोई नहीं"],
+                answer: "C"
+            },
+            {
+                id: 34,
+                section: "General Awareness",
+                question: "Which of the following statements about functions of the speaker of the state legislative assembly is/are correct?<br>1. He summons and prorogues the house in session.<br>2. He can direct a member to withdraw from the House for disorderly conduct.<br><br>राज्य विधान सभा के अध्यक्ष के कार्यों के बारे में निम्नलिखित में से कौन सा/से कथन सही है/हैं?<br>1. वह सदन को सत्र में बुलाता है और उसका सत्रावसान करता है।<br>2. वह किसी सदस्य को अव्यवस्थित आचरण के लिए सदन से निष्कासन का निर्देश दे सकता है।",
+                options: ["(a) 1 only / केवल 1", "(b) 2 only / केवल 2", "(c) Both 1 and 2 / दोनों", "(d) Neither 1 nor 2 / न तो 1 और न ही 2"],
+                answer: "B"
+            },
+            {
+                id: 35,
+                section: "General Awareness",
+                question: "In August 2024, who among the following was awarded the M.S. Swaminathan Award for Environment Protection 2024?<br><br>अगस्त 2024 में, निम्नलिखित में से किसे पर्यावरण संरक्षण के लिए एम.एस. स्वामीनाथन पुरस्कार 2024 से सम्मानित किया गया था?",
+                options: ["(a) Sundar Lal Bahuguna / सुंदर लाल बहुगुणा", "(b) Anant Darshan Shankar / अनंत दर्शन शंकर", "(c) Sunita Narain / सुनीता नारायण", "(d) Rajendra Singh / राजेन्द्र सिंह"],
+                answer: "B"
+            },
+            {
+                id: 36,
+                section: "General Awareness",
+                question: "Which of the following statements is/are correct?<br>1. The C-CARES Portal was launched in 2025 by the Union Minister of Coal and Mines and developed by C-DAC.<br>2. The portal integrates the workers, coal management, and the Coal Mines Provident Fund Organisation (CMPFO).<br>3. The portal is designed to eliminate the need for mobile applications and administrative dashboards.<br><br>निम्नलिखित में से कौन सा/से कथन सही है/हैं?<br>1. C-CARES पोर्टल 2025 में केंद्रीय कोयला और खान मंत्री द्वारा लॉन्च किया गया था और सी-डैक द्वारा विकसित किया गया था।<br>2. यह पोर्टल श्रमिकों, कोयला प्रबंधन और कोयला खान भविष्य निधि संगठन (CMPFO) को एकीकृत करता है।<br>3. पोर्टल को मोबाइल एप्लिकेशन और प्रशासनिक डैशबोर्ड की आवश्यकता को समाप्त करने के लिए डिज़ाइन किया गया है.",
+                options: ["(a) 1 and 2 only / केवल 1 और 2", "(b) 2 and 3 only / केवल 2 and 3", "(c) 1 only / केवल 1", "(d) 1, 2 and 3 / 1, 2 और 3"],
+                answer: "A"
+            },
+            {
+                id: 37,
+                section: "General Awareness",
+                question: "Consider the following statements regarding the National Health Mission (NHM) 2025 targets:<br>1. It envisages achieving universal access to equitable, affordable, and quality healthcare services.<br>2. It aims to reduce the Maternal Mortality Ratio (MMR) to 1 per 1000 live births and the Infant Mortality Rate (IMR) to 25 per 1000 live births.<br>3. It targets reducing the Total Fertility Rate (TFR) to 1.9 as part of its goals.<br><br>राष्ट्रीय स्वास्थ्य मिशन (NHM) 2025 लक्ष्यों के संबंध में निम्नलिखित कथनों पर विचार करें:<br>1. यह समान, किफायती और गुणवत्तापूर्ण स्वास्थ्य सेवाओं तक सार्वभौमिक पहुंच प्राप्त करने की परिकल्पना करता है।<br>2. इसका उद्देश्य मातृ मृत्यु अनुपात (MMR) को प्रति 1000 जीवित जन्मों पर 1 और शिशु मृत्यु दर (IMR) को प्रति 1000 जीवित जन्मों पर 25 तक कम करना है।<br>3. यह अपने लक्ष्यों के हिस्से के रूप में कुल प्रजनन दर (TFR) को 1.9 तक कम करने का लक्ष्य रखता है।",
+                options: ["(a) 1 only / केवल 1", "(b) 1 and 2 only / केवल 1 और 2", "(c) 3 only / केवल 3", "(d) 1, 2, and 3 / 1, 2 और 3"],
+                answer: "B"
+            },
+            {
+                id: 38,
+                section: "General Awareness",
+                question: "Here are three statements based on the description of a government scheme:<br>1. The scheme involves photographing crops during their growth cycle to assess their health and potential mid-season losses.<br>2. Farmers will use a mobile app to upload photographs of crops, which will be analyzed using AI-based cloud platforms.<br>3. It aims to improve the effectiveness of the Pradhan Mantri Fasal Bima Yojana.<br><br>Which scheme is described by the statements above?<br><br>यहाँ एक सरकारी योजना के विवरण पर आधारित तीन कथन दिए गए हैं:<br>1. इस योजना में फसलों के स्वास्थ्य और संभावित मध्य-मौसम नुकसान का आकलन करने के लिए उनके विकास चक्र के दौरान उनकी तस्वीरें लेना शामिल है।<br>2. किसान फसलों की तस्वीरें अपलोड करने के लिए एक मोबाइल ऐप का उपयोग करेंगे, जिसका विश्लेषण एआई-आधारित क्लाउड प्लेटफॉर्म का उपयोग करके किया जाएगा।<br>3. इसका उद्देश्य प्रधानमंत्री फसल बीमा योजना की प्रभावशीलता में सुधार करना है।<br>उपरोक्त कथनों द्वारा किस योजना का वर्णन किया गया है?",
+                options: ["(a) PM-KMY", "(b) PM-KISAN", "(c) SMAM", "(d) CROPIC"],
+                answer: "D"
+            },
+            {
+                id: 39,
+                section: "General Awareness",
+                question: "Which of the following parallels of latitude lies in the Southern Hemisphere?<br><br>दक्षिणी गोलार्द्ध में निम्नलिखित में से कौन-सा अक्षांश समांतर स्थित है?",
+                options: [
+                    "(a) Arctic Circle / आर्कतिक वृत्त",
+                    "(b) Antarctic Circle / अंटार्कटिक वृत्त",
+                    "(c) Tropic of Capricorn / मकर रेखा",
+                    "(d) Tropic of Cancer / कर्क रेखा"
+                ],
+                answer: "C"
+            },
+            {
+                id: 40,
+                section: "General Awareness",
+                question: "Which was the first part of India to hold an election based on universal adult franchise?<br><br>सार्वभौमिक वयस्क मताधिकार के आधार पर चुनाव कराने वाला भारत का पहला भाग कौन सा था?",
+                options: ["(a) Assam / असम", "(b) Manipur / मणिपुर", "(c) Bihar / बिहार", "(d) Tripura / त्रिपुरा"],
+                answer: "B"
+            },
+            {
+                id: 41,
+                section: "General Awareness",
+                question: "Recently, a new app, DRUM (Dynamic Route Planning for Urban Green Mobility), has been developed by IIT-Kharagpur researchers, which helps commuters select route options based on:<br>1. Air pollution exposure<br>2. Weather conditions<br>3. Energy consumption<br>4. Travel time<br>5. Traffic congestion<br><br>हाल ही में, आईआईटी-खड़गपुर के शोधकर्ताओं द्वारा एक नया ऐप, ड्रम (डायनेमिक रूट प्लानिंग फॉर अर्बन ग्रीन मोबिलिटी) विकसित किया गया है, जो यात्रियों को किनके आधार पर मार्ग विकल्प चुनने में मदद करता है:<br>1. वायु प्रदूषण<br>2. मौसम की स्थिति<br>3. ऊर्जा खपत<br>4. यात्रा समय<br>5. यातायात भीड़",
+                options: [
+                    "(a) 1, 2, 3, and 4 only",
+                    "(b) 1, 3, and 5 only",
+                    "(c) 1, 3, and 4 only",
+                    "(d) 1, 2, 4, and 5 only"
+                ],
+                answer: "C"
+            },
+            {
+                id: 42,
+                section: "General Awareness",
+                question: "Which of the following statements about Babur, the founder of the Mughal rule in India, is NOT true?<br><br>भारत में मुगल साम्राज्य की नींव रखने वाले बाबर के संबंध में निम्न कथनों में से कौन-सा असत्य है?",
+                options: [
+                    "(a) Zahiruddin Babur was born in Kabul on 14th February 1483. / जहीरुद्दीन बाबर का जन्म 14 फरवरी 1483 को काबुल में हुआ था।",
+                    "(b) At the early age of 11 years, Babur took over the rule of Fargana. /  बाबर ने 11 वर्ष की अल्प आयु में फरगाना का राज्य भार ग्रहण कर लिया था।",
+                    "(c) During his career, Babur won over Samarkand three times and he lost hold of it everytime. / बाबर ने अपने जीवन काल में तीन बार समरकंद जीता और तीनों बार उसके हाथ से निकल गया।",
+                    "(d) Babur learnt the use of Tulugama from Ujabegas. / बाबर ने उजबेगों से तुलुगमा प्रणाली का प्रयोग सीखा था।"
+                ],
+                answer: "A"
+            },
+            {
+                id: 43,
+                section: "General Awareness",
+                question: "Mount Thullier (642 m) is an important mountain peak in the Andaman and Nicobar Islands. It is located in:<br><br>माउंट थुलियर (642 मीटर) अंडमान और निकोबार द्वीप समूह का एक महत्वपूर्ण पर्वत शिखर है। यह कहाँ स्थित है?",
+                options: [
+                    "(a) North Andaman / उत्तरी अंडमान",
+                    "(b) Middle Andaman / मध्य अंडमान",
+                    "(c) South Andaman / दक्षिणी अंडमान",
+                    "(d) Great Nicobar / ग्रेट निकोबार"
+                ],
+                answer: "D"
+            },
+            {
+                id: 44,
+                section: "General Awareness",
+                question: "Out of the five tributaries of the Indus which are called 'Panchnad', which of the following completely drains the Indian territory?<br><br>सिंधु की पांच सहायक नदियों में से जिन्हें 'पंचनद' कहा जाता है, निम्नलिखित में से कौन सी नदी भारतीय क्षेत्र को पूरी तरह से अपवाहित करती है?",
+                options: ["(a) Ravi / रावी", "(b) Jhelum / झेलम", "(c) Beas / ब्यास", "(d) Satluj / सतलुज"],
+                answer: "C"
+            },
+            {
+                id: 45,
+                section: "General Awareness",
+                question: "Consider the following statements regarding the recent inclusion of Ramsar Wetland Sites in India:<br>1. India has added two new wetlands - Khichan (Phalodi) and Menar (Udaipur), both in Rajasthan, raising the country's total Ramsar sites to 91.<br>2. India holds the highest number of Ramsar sites in Asia and ranks third globally, after the United Kingdom and Mexico.<br><br>भारत में रामसर आर्द्रभूमि स्थलों को हाल ही में शामिल किए जाने के संबंध में निम्नलिखित कथनों पर विचार कीजिए:<br>1. भारत ने राजस्थान में दो नए आर्द्रभूमि स्थलों - खीचन (फलोदी) और मेनार (उदयपुर) को शामिल किया है, जिससे देश में रामसर स्थलों की कुल संख्या बढ़कर 91 हो गई है।<br>2.  भारत एशिया में रामसर स्थलों की सबसे अधिक संख्या रखता है और यूके और मेक्सिको के बाद वैश्विक स्तर पर तीसरे स्थान पर है।",
+                options: ["(a) 1 only / केवल 1", "(b) 2 only / केवल 2", "(c) Both 1 and 2 / दोनों", "(d) Neither 1 nor 2 / न तो 1 और न ही 2"],
+                answer: "C"
+            },
+            {
+                id: 46,
+                section: "General Awareness",
+                question: "Which one of the following makes up Central Nervous System together with the brain?<br><br>निम्नलिखित में से कौन मस्तिष्क के साथ केंद्रीय तंत्रिका तंत्र का निर्माण करता है?",
+                options: ["(a) Neuron / न्यूरॉन", "(b) Brain / मस्तिष्क", "(c) Spinal Cord / मेरु रज्जू", "(d) Central Nervous System / केंद्रीय तंत्रिका तंत्र"],
+                answer: "D"
+            },
+            {
+                id: 47,
+                section: "General Awareness",
+                question: "Which of the following statements about subsistence farming is incorrect?<br><br>निर्वाह कृषि के बारे में निम्नलिखित में से कौन सा कथन गलत है?",
+                options: [
+                    "(a) Household labour is used in this kind of farming. / इस तरह की खेती में घरेलू श्रम का उपयोग किया जाता है।",
+                    "(b) Shifting cultivation falls under this category. / झूम खेती इसी श्रेणी में आती है।",
+                    "(c) It is practised to meet the needs of the farmer's family. / यह किसान के परिवार की जरूरतों को पूरा करने के लिए प्रचलित है।",
+                    "(d) Modern and high end technology is used in this kind of farming. / इस प्रकार की खेती में आधुनिक और उच्च तकनीक का प्रयोग किया जाता है।"
+                ],
+                answer: "B"
+            },
+            {
+                id: 48,
+                section: "General Awareness",
+                question: "Consider the following statements about the International Booker Prize:<br>1. It is awarded annually for a single book originally written in any language, translated into English and published in the UK/Ireland.<br>2. The award comes with a prize of 50,000 pounds, shared equally between the author and the translator.<br><br>अंतर्राष्ट्रीय बुकर पुरस्कार के बारे में निम्नलिखित कथनों पर विचार कीजिए:<br>1. यह प्रतिवर्ष किसी भी भाषा में लिखी गई, अंग्रेजी में अनूदित और यूके/आयरलैंड में प्रकाशित एक पुस्तक के लिए दिया जाता है।<br>2. इस पुरस्कार में 50,000 पाउंड की राशि दी जाती है, जिसे लेखक और अनुवादक के बीच समान रूप से विभाजित किया जाता है।",
+                options: ["(a) 1 only / केवल 1", "(b) 2 only / केवल 2", "(c) Both 1 and 2 / दोनों", "(d) Neither 1 nor 2 / न तो 1 और न ही 2"],
+                answer: "C"
+            },
+            {
+                id: 49,
+                section: "General Awareness",
+                question: "Who has been appointed as the new Director General of the Narcotics Control Bureau (NCB)? (Sep 2024)<br><br>नारकोटिक्स कंट्रोल ब्यूरो (NCB) के नए महानिदेशक के रूप में किसे नियुक्त किया गया है? (सितंबर 2024)",
+                options: [
+                    "(a) Anish Dayal Singh / अनीश दयाल सिंह",
+                    "(b) S N Pradhan / एस.एन. प्रधान",
+                    "(c) Anurag Garg / अनुराग गर्ग",
+                    "(d) Rakesh Asthana / राकेश अस्थाना"
+                ],
+                answer: "D"
+            },
+            {
+                id: 50,
+                section: "General Awareness",
+                question: "Match the following events with their dates during the 1857 Revolt:<br>1. Capture of Delhi -> A. May 10, 1857<br>2. Mutiny at Meerut -> B. September 20, 1857<br>3. Fall of Jhansi -> C. April 1858<br>4. Execution of Mangal Pandey -> D. April 8, 1857<br><br>1857 के विद्रोह के दौरान निम्नलिखित घटनाओं का उनकी तिथियों से मिलान कीजिए:<br>1. दिल्ली पर कब्ज़ा -> A. 10 मई, 1857<br>2. मेरठ में विद्रोह -> B. 20 सितंबर, 1857<br>3. झाँसी का पतन -> C. अप्रैल 1858<br>4. मंगल पांडे की फाँसी -> D. 8 अप्रैल, 1857",
+                options: [
+                    "(a) 1-A, 2-C, 3-D, 4-B",
+                    "(b) 1-B, 2-A, 3-C, 4-D",
+                    "(c) 1-C, 2-D, 3-B, 4-A",
+                    "(d) 1-D, 2-B, 3-A, 4-C"
+                ],
+                answer: "B"
+            },
+
+            // ==================== SECTION 3: QUANTITATIVE APTITUDE (Q51 - Q75) ====================
+            {
+                id: 51,
+                section: "Quantitative Aptitude",
+                question: "A chain smoker had a pack of 130 cigarettes and no more money at all to buy cigarettes for him. Hence he resorted to join the stubs and to smoke them. He needed 5 stubs to make a single cigarette. How many cigarettes could he smoke in all?<br><br>एक चेन स्मोकर के पास 130 सिगरेट का एक पैकेट था और उसके बाद सिगरेट खरीदने के लिए बिल्कुल भी पैसे नहीं थे। अतः उसने बचे हुए टुकड़ों (स्टब्स) को जोड़कर पीने का निर्णय लिया। उसे एक सिगरेट बनाने के लिए 5 टुकड़ों की आवश्यकता थी। ज्ञात कीजिए कि वह कुल कितनी सिगरेट पी सकता है?",
+                options: ["(A) 160", "(B) 161", "(C) 162", "(D) 163"],
+                answer: "C"
+            },
+            {
+                id: 52,
+                section: "Quantitative Aptitude",
+                question: "If a = b = c, then find the value of: <br><br>यदि a = b = c है, तब मान ज्ञात कीजिए:<br><br><div style='font-size:18px; margin: 10px 0;'>&radic;(3abc) / (a<sup>2</sup> + b<sup>2</sup> + c<sup>2</sup>)<sup>3/2</sup></div>",
+                options: ["(a) 2/3", "(b) 1/3", "(c) 4/3", "(d) 5/6"],
+                answer: "B"
+            },
+            {
+                id: 53,
+                section: "Quantitative Aptitude",
+                question: "Akash sold a motorcycle to Navin at a profit of 10%. Navin sold it to Vinay at a profit of 20%. Vinay sold it to Vishal at a loss of 5%. If Vishal paid Rs. 62,700 for the motorcycle, then what was the cost of the motorcycle (in Rs.) for Akash?<br><br>आकाश ने नवीन को 10% लाभ पर एक मोटरसाइकिल बेची। नवीन ने इसे 20% लाभ पर विनय को बेच दिया। विनय ने इसे 5% हानि पर विशाल को बेच दिया। यदि विशाल ने मोटरसाइकिल के लिए 62,700 रुपये का भुगतान किया, तो आकाश के लिए मोटरसाइकिल का मूल्य (रुपये में) क्या था?",
+                options: ["(a) 48,000", "(b) 48,500", "(c) 52,500", "(d) 50,000"],
+                answer: "D"
+            },
+            {
+                id: 54,
+                section: "Quantitative Aptitude",
+                question: "If 3x - 5y + 5 = 0 is written in the form y = mx + c, then find the value of m and c.<br><br>यदि 3x - 5y + 5 = 0 को y = mx + c के रूप में लिखा जाता है, तो m और c का मान ज्ञात कीजिये।",
+                options: ["(a) m = 3, c = 5", "(b) m = 1/5, c = 3", "(c) m = 3/5, c = 1", "(d) m = 5/3, c = 1"],
+                answer: "C"
+            },
+            {
+                id: 55,
+                section: "Quantitative Aptitude",
+                question: "A card is drawn at random from a pack of 52 cards. What is the probability that it is neither a heart nor a king?<br><br>52 पत्तों की गड्डी में से एक पत्ता यादृच्छिक रूप से निकाला जाता है। इसकी क्या प्रायिकता है कि यह वह न तो पान का पत्ता हो और न ही बादशाह हो?",
+                options: ["(a) 4/13", "(b) 9/13", "(c) 2/13", "(d) 3/13"],
+                answer: "B"
+            },
+            {
+                id: 56,
+                section: "Quantitative Aptitude",
+                question: "A rhombus is formed by joining midpoints of the sides of a rectangle in the suitable order. If the area of the rhombus is 2 square units, then the area of the rectangle is:<br><br>एक आयत की भुजाओं के मध्य-बिंदुओं को एक उपयुक्त क्रम में जोड़कर एक समचतुर्भुज बनाया जाता है। यदि समचतुर्भुज का क्षेत्रफल 2 वर्ग इकाई है, तो आयत का क्षेत्रफल क्या है?",
+                options: [
+                    "(A) 2&radic;2 square units / वर्ग इकाई",
+                    "(B) 4 square units / वर्ग इकाई",
+                    "(C) 4&radic;2 square units / वर्ग इकाई",
+                    "(D) 8 square units / वर्ग इकाई"
+                ],
+                answer: "B"
+            },
+            {
+                id: 57,
+                section: "Quantitative Aptitude",
+                question: "A cyclist moves non-stop from A to B, a distance of 14 km, at a certain average speed. If his average speed reduces by 1 km per hour, he takes 20 minutes more to cover the same distance. The original average speed of the cyclist is:<br><br>एक साइकिल चालक A से B तक 14 किमी की दूरी बिना रुके एक निश्चित औसत चाल से तय करता है। यदि उसकी औसत चाल 1 किमी प्रति घंटा कम होती, तो वह उसी दूरी को पूरा करने के लिए 20 मिनट अधिक समय लेता है। उस साइकिल चालक की प्रारंभिक औसत चाल क्या है?",
+                options: ["(a) 5 km/hour / किमी/घंटा", "(b) 6 km/hour / किमी/घंटा", "(c) 7 km/hour / किमी/घंटा", "(d) None of the above / उपर्युक्त में से कोई नहीं"],
+                answer: "C"
+            },
+            {
+                id: 58,
+                section: "Quantitative Aptitude",
+                question: "D is a point on side AB of a &Delta;ABC such that CD is the bisector of &ang;ACB. If &ang;A = 50&deg; and &ang;B = 70&deg;, then &ang;ADC is equal to:<br><br>एक त्रिभुज ABC की भुजा AB पर एक बिंदु D इस प्रकार है कि CD, कोण ACB का समद्विभाजक है। यदि &ang;A = 50&deg; और &ang;B = 70&deg; है, तो &ang;ADC किसके बराबर है?",
+                options: ["(a) 70&deg;", "(b) 100&deg;", "(c) 30&deg;", "(d) 50&deg;"],
+                answer: "B"
+            },
+            {
+                id: 59,
+                section: "Quantitative Aptitude",
+                question: "The distance between two pillars is 120 metres. The height of one pillar is thrice the other. The angles of elevation of their tops from the midpoint of the line connecting their feet are complementary to each other. The height (in metres) of the taller pillar is: (Use: &radic;3 = 1.732)<br><br>दो स्तंभों के बीच की दूरी 120 मीटर है। एक स्तंभ की ऊंचाई दूसरे से तीन गुना है। उनके आधार को जोड़ने वाली रेखा के मध्य बिंदु से उनके शीर्ष के उन्नयन कोण एक दूसरे के पूरक हैं। लम्बे स्तंभ की ऊंचाई (मीटर में) कितनी है? (Use: &radic;3 = 1.732)",
+                options: ["(a) 34.64", "(b) 51.96", "(c) 69.28", "(d) 103.92"],
+                answer: "D"
+            },
+            {
+                id: 60,
+                section: "Quantitative Aptitude",
+                question: "A cloth merchant buys cloth from a weaver and cheats him by using a scale which is 10 cm longer than a normal metre scale. He claims to sell cloth at the cost price to his customers, but while selling uses a scale which is 10 cm shorter than a normal metre scale. What is his gain percent?<br><br>कपड़े का एक व्यापारी बुनकर से कपड़ा खरीदता है और सामान्य मीटर मापनी से 10 सेमी लंबी मापनी का प्रयोग कर बुनकर को धोखा देता है। वह अपने ग्राहकों को लागत मूल्य पर कपड़ा बेचने का दावा करता है, लेकिन बेचते समय सामान्य मीटर मापनी से 10 सेमी छोटी मापनी का प्रयोग करता है। उसका लाभ क्या है?",
+                options: ["(A) 20%", "(B) 21%", "(C) 22 &sup2;&frasl;&sub9; %", "(D) 23 &sup1;&frasl;&sub3; %"],
+                answer: "C"
+            },
+            {
+                id: 61,
+                section: "Quantitative Aptitude",
+                question: "If a<sup>2</sup> - by - cz = 0, ax - b<sup>2</sup> + cz = 0 and ax + by - c<sup>2</sup> = 0, then the value of <strong>x/(a+x) + y/(b+y) + z/(c+z)</strong> will be:<br><br>यदि a<sup>2</sup> - by - cz = 0, ax - b<sup>2</sup> + cz = 0 और ax + by - c<sup>2</sup> = 0 हैं, तो <strong>x/(a+x) + y/(b+y) + z/(c+z)</strong> का मान क्या होगा?",
+                options: ["(A) a + b + c", "(B) 3", "(C) 1", "(D) 0"],
+                answer: "C"
+            },
+            {
+                id: 62,
+                section: "Quantitative Aptitude",
+                question: "Manav's average earning per month in the first three months of a year was Rs. 24328. In April, his earning was 50% more than the average earning in the first three months. If his average earning per month for the whole year is Rs. 76867, then what will be Manav's average earning (in Rs.) per month from May to December?<br><br>एक वर्ष के पहले तीन महीनों में मानव की औसत मासिक आय ₹ 24328 थी। अप्रैल में, उसकी आय पहले तीन महीनों की औसत आय से 50% अधिक थी। यदि पूरे वर्ष उसकी औसत मासिक आय ₹ 76867 है, तो मई से दिसंबर तक मानव की औसत मासिक आय (₹ में) कितनी होगी?",
+                options: ["(a) 101614", "(b) 101619", "(c) 101621", "(d) 101616"],
+                answer: "D"
+            },
+            {
+                id: 63,
+                section: "Quantitative Aptitude",
+                question: "In the given figure, MNP, SQP, NQR, and MSR are straight lines. &ang;NPQ = 28&deg; and &ang;QRS = 34&deg;. What is the degree measure of &ang;SMN?<br><br>दी गई आकृति में, MNP, SQP, NQR, और MSR सीधी रेखाएँ हैं, &ang;NPQ = 28&deg; और &ang;QRS = 34&deg; हैं। &ang;SMN का डिग्री माप कितना है?<br><div style='text-align:center; margin-top:10px;'><svg width='260' height='220' style='background:#fff; border:1px solid #ccc; padding:10px; display:inline-block;'><circle cx='100' cy='156' r='60' fill='none' stroke='#000' stroke-width='1.8' /><line x1='100' y1='30' x2='50' y2='190' stroke='#000' stroke-width='1.8' /><line x1='100' y1='30' x2='150' y2='190' stroke='#000' stroke-width='1.8' /><line x1='230' y1='100' x2='60' y2='100' stroke='#000' stroke-width='1.8' /><line x1='230' y1='100' x2='50' y2='190' stroke='#000' stroke-width='1.8' /><path d='M 94 49 A 20 20 0 0 0 106 49' fill='none' stroke='#000' stroke-width='1' /><path d='M 210 100 A 20 20 0 0 1 212 109' fill='none' stroke='#000' stroke-width='1' /><text x='96' y='25' font-family='sans-serif' font-size='12' font-weight='bold'>R</text><text x='70' y='93' font-family='sans-serif' font-size='12' font-weight='bold'>S</text><text x='123' y='93' font-family='sans-serif' font-size='12' font-weight='bold'>Q</text><text x='236' y='104' font-family='sans-serif' font-size='12' font-weight='bold'>P</text><text x='142' y='152' font-family='sans-serif' font-size='12' font-weight='bold'>N</text><text x='36' y='200' font-family='sans-serif' font-size='12' font-weight='bold'>M</text><text x='92' y='62' font-family='sans-serif' font-size='10' font-weight='bold'>34&deg;</text><text x='195' y='105' font-family='sans-serif' font-size='10' font-weight='bold'>28&deg;</text></svg></div>",
+                options: ["(a) 108", "(b) 69", "(c) 59", "(d) 45"],
+                answer: "C"
+            },
+            {
+                id: 64,
+                section: "Quantitative Aptitude",
+                question: "In a company, 35% of employees are from a science background. 1/5 of the remaining employees are from an arts background. The rest are either illiterate or from a commerce background. The number of illiterate is 300 which is 1/2 of the commerce background. How many employees are from science and arts background?<br><br>एक कंपनी में, 35% कर्मचारी विज्ञान पृष्ठभूमि से हैं और शेष का 1/5 कला पृष्ठभूमि से हैं। बाकी या तो अनपढ़ हैं या वाणिज्य पृष्ठभूमि से हैं। अनपढ़ों की संख्या 300 है जो वाणिज्य पृष्ठभूमि का 1/2 है। विज्ञान और कला पृष्ठभूमि से कितने कर्मचारी हैं?",
+                options: ["(a) 1100", "(b) 1200", "(c) 1500", "(d) 1300"],
+                answer: "A"
+            },
+            {
+                id: 65,
+                section: "Quantitative Aptitude",
+                question: "Three persons X, Y and Z invested some amount in a project of a company. The investment of Y is 6.25% less than the investment of X and the investment of Z is 60% more than the investment of Y. If they donated some amount which is equal to 7% of total profit. The profit share of X is Rs. 17,856, then what is the amount of total profit (in Rs.)?<br><br>त्रिन व्यक्ति X, Y और Z कंपनी की एक परियोजना में कुछ धनराशि का निवेश करते हैं। Y का निवेश X के निवेश से 6.25% कम है और Z का निवेश Y के निवेश से 60% अधिक है। यदि वे कुछ धनराशि दान करते हैं जो कुल लाभ का 7% है। X का लाभ हिस्सा ₹ 17,856 है, तो कुल लाभ की धनराशि (₹ में) क्या है?",
+                options: ["(a) 56,000", "(b) 66,000", "(c) 55,000", "(d) 68,000"],
+                answer: "B"
+            },
+            {
+                id: 66,
+                section: "Quantitative Aptitude",
+                question: "In the following figure, AP, BP and CD are three tangents of the circle, then which of the following statement (s) is/are correct?<br><br>निम्नलिखित आकृति में, AP, BP और CD वृत्त के तीन स्पर्शरेखा हैं, तो निम्नलिखित में से कौन-सा कथन सही है/हैं?<br>A) PA = PC + CE<br>B) (OP)&sup2; = OA&sup2; + PD&sup2; + ED&sup2; + 2 &times; PD &times; ED<br>C) Perimeter of the &Delta;PCD is 2PA. / &Delta;PCD की परिधि 2PA है।<br><div style='text-align:center; margin-top:10px;'><svg width='260' height='200' style='background:#fff; border:1px solid #ccc; padding:10px; display:inline-block;'><circle cx='70' cy='100' r='50' fill='none' stroke='#000' stroke-width='1.8' /><line x1='70' y1='100' x2='88' y2='53' stroke='#000' stroke-width='1.8' /><line x1='70' y1='100' x2='88' y2='147' stroke='#000' stroke-width='1.8' /><line x1='70' y1='100' x2='210' y2='100' stroke='#000' stroke-width='1.8' /><line x1='210' y1='100' x2='88' y2='53' stroke='#000' stroke-width='1.8' /><line x1='210' y1='100' x2='88' y2='147' stroke='#000' stroke-width='1.8' /><line x1='120' y1='65' x2='120' y2='135' stroke='#000' stroke-width='1.8' /><text x='58' y='104' font-family='sans-serif' font-size='12' font-weight='bold'>O</text><text x='215' y='104' font-family='sans-serif' font-size='12' font-weight='bold'>P</text><text x='88' y='45' font-family='sans-serif' font-size='12' font-weight='bold'>A</text><text x='88' y='162' font-family='sans-serif' font-size='12' font-weight='bold'>B</text><text x='125' y='60' font-family='sans-serif' font-size='12' font-weight='bold'>C</text><text x='125' y='150' font-family='sans-serif' font-size='12' font-weight='bold'>D</text><text x='125' y='104' font-family='sans-serif' font-size='12' font-weight='bold'>E</text></svg></div>",
+                options: ["(a) Only A", "(b) Only A and B", "(c) Only A and C", "(d) All of these / यह सभी"],
+                answer: "D"
+            },
+            {
+                id: 67,
+                section: "Quantitative Aptitude",
+                question: "If the diagonal length of the square is &radic;882 cm, then find the area of the circle with the maximum radius inscribed in the same square (in cm&sup2;).<br><br>यदि वर्ग के विकर्ण की लंबाई &radic;882 सेमी है, तो उसी वर्ग में अंकित अधिकतम त्रिज्या वाले वृत्त का क्षेत्रफल (सेमी&sup2; में) ज्ञात कीजिए।",
+                options: ["(a) 246.5 cm&sup2;", "(b) 446.5 cm&sup2;", "(c) 346.5 cm&sup2;", "(d) 546.5 cm&sup2;"],
+                answer: "C"
+            },
+            {
+                id: 68,
+                section: "Quantitative Aptitude",
+                question: "A vessel contains 100 litres pure milk. 10 litres milk is taken out of the vessel and replaced with same quantity of water. Now 20 litres mixture is taken out of the vessel and replaced with same quantity of water. Now 'x' litres water is added to the mixture so that the ratio of the milk to water in the resultant mixture becomes 3:2. Find the value of 'x'.<br><br>एक बर्तन में 100  लीटर शुद्ध दूध है। बर्तन से 10 लीटर दूध निकाला जाता है और उसके स्थान पर उतनी ही मात्रा में पानी डाला जाता है। अब बर्तन से 20 लीटर मिश्रण निकाला जाता है और उसके स्थान पर उतनी ही मात्रा में पानी डाला जाता है, अब मिश्रण में 'x' लीटर पानी मिलाया जाता है ताकि परिणामी मिश्रण में दूध और पानी का अनुपात 3:2 हो जाए। 'x' का मान ज्ञात करें।",
+                options: ["(A) 15", "(B) 20", "(C) 25", "(D) 30"],
+                answer: "B"
+            },
+            {
+                id: 69,
+                section: "Quantitative Aptitude",
+                question: "P can complete a work in 6 days. Working with the help of Q, the job is completed in 7 days when P starts the work and P and Q work on alternate days. In how many days can Q alone complete the job?<br><br>P एक काम को 6 दिनों में पूरा कर सकता है। Q की मदद से काम करते हुए, काम 7 दिनों में पूरा हो जाता है, यदि P काम शुरू करता है और P और Q वैकल्पिक दिनों पर काम करते हैं। Q अकेले काम को कितने दिनों में पूरा कर सकता है?",
+                options: ["(a) 10", "(b) 8", "(c) 9", "(d) 12"],
+                answer: "C"
+            },
+            {
+                id: 70,
+                section: "Quantitative Aptitude",
+                question: "Two identical glass jars have milk and water in the ratio 3:1 and 5:2 respectively. If the mixture in the two jars were emptied out in an empty bucket, what is the resultant ratio of milk and water in the new mixture?<br><br>दो समान कांच के जार में दूध और पानी का अनुपात क्रमशः 3:1 और 5:2 है। यदि दोनों जार के मिश्रण को एक खाली बाल्टी में खाली कर दिया जाता है, तो नए मिश्रण में दूध और पानी का परिणामी अनुपात क्या है?",
+                options: ["(a) 41:15", "(b) 41:17", "(c) 31:15", "(d) 41:14"],
+                answer: "A"
+            },
+            {
+                id: 71,
+                section: "Quantitative Aptitude",
+                question: "When 0.234343434... is expressed in the form of A/B (lowest terms), then the value of B-A is:<br><br>जब 0.234343434.... को A/B (निम्नतम पदों में) के रूप में व्यक्त किया जाता है, तो B-A का मान है:",
+                options: ["(a) 379", "(b) 376", "(c) 378", "(d) 377"],
+                answer: "A"
+            },
+            {
+                id: 72,
+                section: "Quantitative Aptitude",
+                question: "If a cos &theta; + b sin &theta; = y, then find the value of b cos &theta; - a sin &theta;.<br><br>यदि a cos &theta; + b sin &theta; = y है, तो b cos &theta; - a sin &theta; का मान ज्ञात कीजिए।",
+                options: ["(a) a&sup2; + b&sup2; - y&sup2;", "(b) &radic;(a&sup2; + b&sup2; - y&sup2;)", "(c) &radic;(a&sup2; - b&sup2; + y&sup2;)", "(d) a&sup2; - b&sup2; - y&sup2;"],
+                answer: "B"
+            },
+            {
+                id: 73,
+                section: "Quantitative Aptitude",
+                question: "If x + 1/y = 1, and x/y&sup2; - 2xy = 12, then the value of &radic;(x&sup4; + y&sup4;) is:<br><br>यदि x + 1/y = 1, और x/y&sup2; - 2xy = 12 है, तो &radic;(x&sup4; + y&sup4;) का मान है:",
+                options: ["(a) 3", "(b) 5", "(c) 6", "(d) 8"],
+                answer: "B"
+            },
+            {
+                id: 74,
+                section: "Quantitative Aptitude",
+                question: "The total surface area of a square-based right pyramid is 1536 m&sup2;, of which 37.5% is the area of the base of the pyramid. What is the volume (in m&sup3;) of this pyramid?<br><br>एक वर्गाकार-आधारित लंबवत पिरामिड का कुल पृष्ठीय क्षेत्रफल 1536 m&sup2; है, जिसमें से 37.5% पिरामिड के आधार का क्षेत्रफल है। इस पिरामिड का आयतन (m&sup3; में) क्या है?",
+                options: ["(a) 3048", "(b) 3072", "(c) 3144", "(d) 3108"],
+                answer: "B"
+            },
+            {
+                id: 75,
+                section: "Quantitative Aptitude",
+                question: "Two pipes P and Q can fill a tank in 32 minutes and 48 minutes. Both pipes are opened and after some time pipe Q is turned off. The tank is filled in 24 minutes. When was the pipe Q closed?<br><br>दो पाइप P और Q एक टैंक को क्रमशः 32 मिनट और 48 मिनट में भर सकते हैं। दोनों पाइप खोल दिए जाते हैं और कुछ समय बाद पाइप Q को बंद कर दिया जाता है। टैंक 24 मिनट में भर जाता है। पाइप Q को कब बंद किया गया था?",
+                options: ["(a) 12 minutes / 12 मिनट", "(b) 15 minutes / 15 मिनट", "(c) 10 minutes / 10 मिनट", "(d) 16 minutes / 16 मिनट"],
+                answer: "A"
+            },
+
+            // ==================== SECTION 4: ENGLISH LANGUAGE (Q76 - Q100) ====================
+            {
+                id: 76,
+                section: "English",
+                question: "Which of the following sentences correctly uses the meaning of the word \"overstated\"?<br><br>निम्नलिखित में से कौन सा वाक्य \"overstated\" शब्द के अर्थ का सही ढंग से उपयोग करता है?",
+                options: [
+                    "(a) She understated her accomplishments to impress the interviewer.",
+                    "(b) He downplayed the importance of the project during the presentation.",
+                    "(c) They exaggerated the size of the fish they caught.",
+                    "(d) The athlete achieved his goal through hard work and dedication."
+                ],
+                answer: "C"
+            },
+            {
+                id: 77,
+                section: "English",
+                question: "Given below are four jumbled sentences. Select the option that gives their correct order.<br><br>S1: Books are very useful to us.<br>S6: We can read books.<br>A: We get knowledge on different subjects.<br>B: They are the best companion of man.<br>C: Books are a good source of knowledge.<br>D: They never cheat the reader.",
+                options: ["(a) ABCD", "(b) BDCA", "(c) CDBA", "(d) BCDA"],
+                answer: "B"
+            },
+            {
+                id: 78,
+                section: "English",
+                question: "In the following question, three words having different meanings of a certain word are given. Select that word from the answer choices, given under each set of words:<br><br><b>Sing, intone, song</b>",
+                options: ["(a) Chant", "(b) cacophony", "(c) dissonance", "(d) disharmony"],
+                answer: "A"
+            },
+            {
+                id: 79,
+                section: "English",
+                question: "Four sentences are given, out of which three have spelling errors. Choose the sentence with all correctly spelt words.",
+                options: [
+                    "(a) Thousands protested the election fraud.",
+                    "(b) The teacher told him to watch his grammer.",
+                    "(c) My friend happend by around dinnertime.",
+                    "(d) That was an impressive and an irresistable necklace."
+                ],
+                answer: "A"
+            },
+            {
+                id: 80,
+                section: "English",
+                question: "Direction: Fill in the blank with the correct word from the alternatives given below.<br><br>______ Anmol does not work, he cannot succeed.",
+                options: ["(a) Unless", "(b) Till", "(c) If", "(d) Until"],
+                answer: "C"
+            },
+            {
+                id: 81,
+                section: "English",
+                question: "Choose the appropriate word to complete the given sentence:<br><br>Mr. and Mrs. Joshi go for a ______ walk just before dinner.",
+                options: ["(a) vibrant", "(b) brisk", "(c) vivacious", "(d) slow"],
+                answer: "B"
+            },
+            {
+                id: 82,
+                section: "English",
+                question: "The following sentence has been divided into parts. One of them may contain an error. Select the part that contains the error from the given options. If you don't find any error, mark 'No error' as your answer.<br><br>According to sources, (A) / the beauty products of that (B) / company have been banned from the market. (C) / No Error (D)",
+                options: [
+                    "(a) According to sources,",
+                    "(b) company have been banned from the market.",
+                    "(c) No Error",
+                    "(d) the beauty products of that"
+                ],
+                answer: "C"
+            },
+            {
+                id: 83,
+                section: "English",
+                question: "Choose the word which means the following:<br><br>The cessation of warfare before a treaty is signed.",
+                options: ["(a) Amnesty", "(b) Amiability", "(c) Agreement", "(d) Armistice"],
+                answer: "D"
+            },
+            {
+                id: 84,
+                section: "English",
+                question: "Select the most appropriate meaning of the given proverb:<br><br><b>It takes two to tango</b>",
+                options: [
+                    "(a) Both parties in a difficult situation are equally responsible",
+                    "(b) A third person decides who is to be blamed",
+                    "(c) Both parties in a difficult situation can be blameless",
+                    "(d) Only one party takes the blame"
+                ],
+                answer: "A"
+            },
+            {
+                id: 85,
+                section: "English",
+                question: "Choose the correct spelling to complete the sentence:<br><br>\"She roasted a _______ over the campfire.\"",
+                options: ["(a) marshmellow", "(b) marshmallo", "(c) marshmallow", "(d) marshmelloe"],
+                answer: "C"
+            },
+            {
+                id: 86,
+                section: "English",
+                question: "Find the word which is nearest to the meaning of the given word:<br><br><b>Derision</b>",
+                options: ["(a) Praise", "(b) Ridicule", "(c) Grace", "(d) Turbulence"],
+                answer: "B"
+            },
+            {
+                id: 87,
+                section: "English",
+                question: "Direction: Select the segment of the sentence that contains the grammatical error. If there is no error, mark 'No error' as your answer.<br><br>She had to work (A)/ very hard to cope up (B)/ with the situation. (C)/ No error (D)",
+                options: ["(a) A", "(b) B", "(c) C", "(d) D"],
+                answer: "B"
+            },
+            {
+                id: 88,
+                section: "English",
+                question: "Choose the most appropriate synonym of the underlined word:<br><br>We were <u>disillusioned</u> when we saw how the movie star acted in real life.",
+                options: ["(a) Disenchanted", "(b) Deluded", "(c) Fooled", "(d) Misrepresented"],
+                answer: "A"
+            },
+            {
+                id: 89,
+                section: "English",
+                question: "Choose the pair, closest to the similar in meaning:<br><br><b>Mitigating - Extenuating</b>",
+                options: [
+                    "(a) Conviction - Acquittal",
+                    "(b) Sentence - Pardon",
+                    "(c) Appeal - Trial",
+                    "(d) Mitigating - Extenuating"
+                ],
+                answer: "D"
+            },
+            {
+                id: 90,
+                section: "English",
+                question: "Select the most appropriate option to substitute the underlined segment in the given sentence. If there is no need to substitute it, select 'No substitution required'.<br><br>After struggling to meet our deadlines for the week, we found that the longest mile is the <u>fastest part of the journey</u>.",
+                options: [
+                    "(a) most interesting",
+                    "(b) No substitution required",
+                    "(c) last mile home",
+                    "(d) easiest to cover"
+                ],
+                answer: "C"
+            },
+            {
+                id: 91,
+                section: "English",
+                question: "In the following question, a sentence or a phrase is given which can be substituted by one word. Choose the most appropriate word explaining the sentence or the phrase from the given options:<br><br>A divine force that some people believe controls our lives and in a way protects us is called ______",
+                options: ["(a) Providence", "(b) Universal", "(c) Spiritual", "(d) Metaphysics"],
+                answer: "A"
+            },
+            {
+                id: 92,
+                section: "English",
+                question: "Direction: Select the segment of the sentence that contains the grammatical error. If there is no error, mark 'No error' as your answer.<br><br>Mr. Singh, the dean and the trustee of the college, (A)/ will address the students (B)/ on the day of convocation. (C)/ No error (D)",
+                options: ["(a) A", "(b) B", "(c) C", "(d) D"],
+                answer: "A"
+            },
+            {
+                id: 93,
+                section: "English",
+                question: "Directions: In this section, each item consists of six sentences of a passage. The first and sixth sentences are given in the beginning as S1 and S6. The middle four sentences in each have been jumbled up and labelled as P, Q, R and S. You are required to find the proper sequence of the four sentences and mark your response accordingly.<br><br>S1. The exploration of Mars has reached a new frontier with the launch of the latest rover mission.<br>S6. Moreover, this mission could lay the groundwork for future manned missions to Mars.<br>P. Its primary objective is to search for signs of ancient life and collect soil and rock samples.<br>Q. The rover is equipped with advanced scientific instruments designed to perform a variety of experiments.<br>R. These missions are crucial for understanding if Mars was ever habitable and if it can support life in the future.<br>S. A successful mission will not only achieve these objectives but also test new technologies for traversing and studying the Martian surface.",
+                options: ["(a) PQRS", "(b) QPRS", "(c) PRSQ", "(d) QRSP"],
+                answer: "A"
+            },
+            {
+                id: 94,
+                section: "English",
+                question: "In the following sentence, four words or phrases have been underlined. One of them is incorrect. Choose the INCORRECT word or phrase from the given options:<br><br>My secretary <u>told</u> me that he <u>has forget</u> to lock my cupboard and <u>said</u> that we should <u>turn back</u>.",
+                options: ["(a) turn back", "(b) said", "(c) told me", "(d) has forget"],
+                answer: "D"
+            },
+            {
+                id: 95,
+                section: "English",
+                question: "Choose the correct spelling to complete the sentence:<br><br>\"Her advice proved to be truly _______ to the success of the project.\"",
+                options: ["(a) indispensible", "(b) indespensable", "(c) indispensible", "(d) indispensable"],
+                answer: "D"
+            },
+            // Comprehension Passage Cloze Test (Q96 - Q100)
+            {
+                id: 96,
+                section: "English",
+                question: "<b>Comprehension (Que No. 96 - 100):</b> Read the passage carefully and select the most appropriate option to fill in each blank.<br><br>We often encounter people who appear delightful on the surface but are secretly struggling with inner sadness because they don't have money. For many, <b>(96) ______</b> is often viewed as the key to happiness or sorrow. However, this is a misconception. While <b>(97) ______</b> can provide material comforts such as food, luxurious homes, a healthy lifestyle and various conveniences, it cannot purchase true happiness.<br>If wealth were the source of happiness, the rich would undoubtedly be the happiest individuals on earth. However, what we observe is quite the opposite-many wealthy people are plagued by <b>(98) ______</b>, anxiety, fear, stress and a variety of other problems. In conclusion, <b>(99) ______</b> is unrelated to happiness and true joy often comes from non-material aspects of life, such as relationships and personal fulfillment. Therefore, it is essential to recognise that <b>(100) ______</b> can be found within oneself rather than in external possessions.<br><br>Select the most appropriate option to fill in blank number 1:",
+                options: ["(a) knowledge", "(b) love", "(c) wealth", "(d) friendship"],
+                answer: "C"
+            },
+            {
+                id: 97,
+                section: "English",
+                question: "Select the most appropriate option to fill in blank number 2:",
+                options: ["(a) love", "(b) success", "(c) money", "(d) knowledge"],
+                answer: "C"
+            },
+            {
+                id: 98,
+                section: "English",
+                question: "Select the most appropriate option to fill in blank number 3:",
+                options: ["(a) sadness", "(b) success", "(c) contentment", "(d) happiness"],
+                answer: "A"
+            },
+            {
+                id: 99,
+                section: "English",
+                question: "Select the most appropriate option to fill in blank number 4:",
+                options: ["(a) excitement", "(b) joy", "(c) wealth", "(d) satisfaction"],
+                answer: "C"
+            },
+            {
+                id: 100,
+                section: "English",
+                question: "Select the most appropriate option to fill in blank number 5:",
+                options: ["(a) success", "(b) happiness", "(c) financial help", "(d) social status"],
+                answer: "B"
+            }
+        ];
+
+        // APP STATE MANAGEMENT
+        let currentSectionIdx = 0;
+        let activeQuestionIdx = 0;
+        let candidateName = "";
+        let rollNumber = "";
+        let timerInterval = null;
+        let sectionTimeRemaining = 900; // 15 Minutes (900 seconds)
+        let examStartTime = null;
+        
+        // Track the user responses: key is question id, value is answer letter (A, B, C, D)
+        const userAnswers = {};
+        
+        // Track palette states: key is question id
+        // State values: 'unvisited', 'visited', 'not-answered', 'answered', 'review'
+        const questionStates = {};
+
+        // Initialize question states
+        questions.forEach(q => {
+            questionStates[q.id] = 'unvisited';
+        });
+
+        // HTML DOM References
+        const startScreen = document.getElementById('start-screen');
+        const startForm = document.getElementById('start-form');
+        const testScreen = document.getElementById('test-screen');
+        const resultScreen = document.getElementById('result-screen');
+        const paletteGrid = document.getElementById('palette-button-grid');
+        const activeQuestionCard = document.getElementById('active-question-card');
+        const questionHeader = document.getElementById('question-header');
+        const questionTextContent = document.getElementById('question-text-content');
+        const optionsContainer = document.getElementById('options-container');
+        const paletteTitle = document.getElementById('palette-title');
+        const sectionTimer = document.getElementById('section-timer');
+
+        // Nav tabs
+        const tabBtns = [
+            document.getElementById('tab-0'),
+            document.getElementById('tab-1'),
+            document.getElementById('tab-2'),
+            document.getElementById('tab-3')
+        ];
+
+        // Controls Buttons
+        const btnSaveNext = document.getElementById('btn-save-next');
+        const btnReview = document.getElementById('btn-review');
+        const btnClear = document.getElementById('btn-clear');
+        const btnPrev = document.getElementById('btn-prev');
+        const btnNextNav = document.getElementById('btn-next-nav');
+        const btnSubmitExam = document.getElementById('btn-submit-exam');
+
+        // Start Form Submission
+        startForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            candidateName = document.getElementById('candidate-name').value.trim();
+            rollNumber = document.getElementById('roll-number').value.trim() || 'CGL2026' + Math.floor(1000 + Math.random() * 9000);
+            
+            if (!candidateName) {
+                alert("Candidate name is mandatory.");
+                return;
+            }
+
+            // Move to Test Screen
+            startScreen.classList.add('hidden');
+            testScreen.classList.remove('hidden');
+            
+            // Enter Fullscreen natively
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen().catch(() => {});
+            }
+
+            // Start Session
+            examStartTime = new Date();
+            startTimer();
+            loadSection(0);
+        });
+
+        // SECTION LOADER
+        function loadSection(sectionIdx) {
+            audio.playSuccess();
+            currentSectionIdx = sectionIdx;
+            
+            // Unlock current section tab, lock others
+            tabBtns.forEach((btn, idx) => {
+                btn.className = 'sec-tab';
+                if (idx === currentSectionIdx) {
+                    btn.classList.add('active');
+                } else if (idx < currentSectionIdx) {
+                    btn.classList.add('completed');
+                } else {
+                    // locked
+                }
+            });
+
+            // Set palette title
+            const sectionNames = ["Reasoning", "General Awareness", "Quantitative Aptitude", "English"];
+            paletteTitle.textContent = `${sectionNames[currentSectionIdx]} Questions`;
+
+            // Reset Section Timer to 15:00
+            sectionTimeRemaining = 900;
+            updateTimerDisplay();
+
+            // Set first question of this section as active
+            const sectionQs = questions.filter(q => q.section === sectionNames[currentSectionIdx]);
+            activeQuestionIdx = questions.indexOf(sectionQs[0]);
+
+            renderPaletteGrid();
+            loadQuestion(activeQuestionIdx);
+        }
+
+        // TIMER MODULE
+        function startTimer() {
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                sectionTimeRemaining--;
+                updateTimerDisplay();
+
+                // Warning beep in the last minute (every 10 seconds)
+                if (sectionTimeRemaining <= 60 && sectionTimeRemaining > 0) {
+                    sectionTimer.classList.add('pulse-timer');
+                    if (sectionTimeRemaining % 10 === 0) {
+                        audio.playBeep();
+                    }
+                } else {
+                    sectionTimer.classList.remove('pulse-timer');
+                }
+
+                // Section Timeout Trigger
+                if (sectionTimeRemaining <= 0) {
+                    handleSectionTimeout();
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(sectionTimeRemaining / 60);
+            const seconds = sectionTimeRemaining % 60;
+            sectionTimer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function handleSectionTimeout() {
+            // Save state of current active question if uncompleted
+            if (questionStates[questions[activeQuestionIdx].id] === 'visited' || questionStates[questions[activeQuestionIdx].id] === 'unvisited') {
+                questionStates[questions[activeQuestionIdx].id] = 'not-answered';
+            }
+
+            if (currentSectionIdx < 3) {
+                // Submit current section & progress to next
+                loadSection(currentSectionIdx + 1);
+            } else {
+                // Auto submit final exam
+                submitExam();
+            }
+        }
+
+        // PALETTE GENERATOR
+        function renderPaletteGrid() {
+            paletteGrid.innerHTML = '';
+            const sectionNames = ["Reasoning", "General Awareness", "Quantitative Aptitude", "English"];
+            const sectionQs = questions.filter(q => q.section === sectionNames[currentSectionIdx]);
+
+            sectionQs.forEach((q, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `palette-btn ${getPaletteClass(q.id)}`;
+                btn.textContent = idx + 1;
+                
+                if (questions.indexOf(q) === activeQuestionIdx) {
+                    btn.classList.add('active');
+                }
+
+                btn.addEventListener('click', () => {
+                    audio.playClick();
+                    // Update current question state before changing
+                    saveStateBeforeJump();
+                    activeQuestionIdx = questions.indexOf(q);
+                    loadQuestion(activeQuestionIdx);
+                    renderPaletteGrid();
+                });
+
+                paletteGrid.appendChild(btn);
+            });
+        }
+
+        function getPaletteClass(qId) {
+            switch(questionStates[qId]) {
+                case 'answered': return 'c-answered';
+                case 'not-answered': return 'c-not-answered';
+                case 'review': return 'c-review';
+                case 'visited': return 'c-visited';
+                default: return 'c-unvisited';
+            }
+        }
+
+        function saveStateBeforeJump() {
+            const q = questions[activeQuestionIdx];
+            if (questionStates[q.id] === 'unvisited') {
+                questionStates[q.id] = 'visited';
+            }
+        }
+
+        // QUESTION RENDERING ENGINE
+        function loadQuestion(idx) {
+            const q = questions[idx];
+            
+            // Slide transition animation
+            activeQuestionCard.style.animation = 'none';
+            activeQuestionCard.offsetHeight; // trigger reflow
+            activeQuestionCard.style.animation = 'fadeIn 0.3s ease-out forwards';
+
+            // Mark question as visited
+            if (questionStates[q.id] === 'unvisited') {
+                questionStates[q.id] = 'visited';
+            }
+
+            // Adjust Question header number index based on section (1-25)
+            const sectionNames = ["Reasoning", "General Awareness", "Quantitative Aptitude", "English"];
+            const sectionQs = questions.filter(qItem => qItem.section === sectionNames[currentSectionIdx]);
+            const seqNumber = sectionQs.indexOf(q) + 1;
+            
+            questionHeader.textContent = `Question ${seqNumber} (${q.section} Section)`;
+            questionTextContent.innerHTML = q.question;
+
+            // Render options
+            optionsContainer.innerHTML = '';
+            q.options.forEach((optText, optIdx) => {
+                const letter = String.fromCharCode(65 + optIdx); // A, B, C, D
+                const optItem = document.createElement('div');
+                optItem.className = 'option-item';
+                if (userAnswers[q.id] === letter) {
+                    optItem.classList.add('selected');
+                }
+
+                optItem.innerHTML = `
+                    <div class="option-radio"></div>
+                    <span class="option-letter">${letter}.</span>
+                    <span>${optText}</span>
+                `;
+
+                optItem.addEventListener('click', () => {
+                    audio.playClick();
+                    // Select option
+                    userAnswers[q.id] = letter;
+                    
+                    // Highlight selected item
+                    const items = optionsContainer.querySelectorAll('.option-item');
+                    items.forEach(item => item.classList.remove('selected'));
+                    optItem.classList.add('selected');
+                });
+
+                optionsContainer.appendChild(optItem);
+            });
+
+            // Toggle Submit Exam button in section 4
+            if (currentSectionIdx === 3) {
+                btnSubmitExam.classList.remove('hidden');
+            } else {
+                btnSubmitExam.classList.add('hidden');
+            }
+
+            // Handle prev/next navigation states
+            btnPrev.disabled = (seqNumber === 1);
+            btnNextNav.disabled = (seqNumber === sectionQs.length);
+        }
+
+        // NAVIGATION CONTROLLER ACTION EVENTS
+        // Save & Next Button
+        btnSaveNext.addEventListener('click', () => {
+            audio.playClick();
+            const q = questions[activeQuestionIdx];
+            if (userAnswers[q.id]) {
+                questionStates[q.id] = 'answered';
+            } else {
+                questionStates[q.id] = 'not-answered';
+            }
+            goToNextQuestion();
+        });
+
+        // Mark for Review & Next Button
+        btnReview.addEventListener('click', () => {
+            audio.playClick();
+            const q = questions[activeQuestionIdx];
+            questionStates[q.id] = 'review';
+            goToNextQuestion();
+        });
+
+        // Clear Response Button
+        btnClear.addEventListener('click', () => {
+            audio.playClick();
+            const q = questions[activeQuestionIdx];
+            delete userAnswers[q.id];
+            questionStates[q.id] = 'visited';
+            
+            // Deselect visual option styles
+            const items = optionsContainer.querySelectorAll('.option-item');
+            items.forEach(item => item.classList.remove('selected'));
+            renderPaletteGrid();
+        });
+
+        // Previous Button
+        btnPrev.addEventListener('click', () => {
+            audio.playClick();
+            saveStateBeforeJump();
+            activeQuestionIdx--;
+            loadQuestion(activeQuestionIdx);
+            renderPaletteGrid();
+        });
+
+        // Next Button (without saving)
+        btnNextNav.addEventListener('click', () => {
+            audio.playClick();
+            saveStateBeforeJump();
+            activeQuestionIdx++;
+            loadQuestion(activeQuestionIdx);
+            renderPaletteGrid();
+        });
+
+        // Submit Button Click
+        btnSubmitExam.addEventListener('click', () => {
+            audio.playClick();
+            if (confirm("Are you sure you want to submit the Mock Test?")) {
+                submitExam();
+            }
+        });
+
+        function goToNextQuestion() {
+            const sectionNames = ["Reasoning", "General Awareness", "Quantitative Aptitude", "English"];
+            const sectionQs = questions.filter(q => q.section === sectionNames[currentSectionIdx]);
+            const seqNumber = sectionQs.indexOf(questions[activeQuestionIdx]) + 1;
+
+            if (seqNumber < sectionQs.length) {
+                activeQuestionIdx++;
+                loadQuestion(activeQuestionIdx);
+                renderPaletteGrid();
+            } else {
+                // Section completed!
+                if (currentSectionIdx < 3) {
+                    alert(`Section ${currentSectionIdx + 1} completed! Auto-loading Section ${currentSectionIdx + 2}.`);
+                    loadSection(currentSectionIdx + 1);
+                } else {
+                    submitExam();
+                }
+            }
+        }
+
+        // SUBMIT AND SCORING MODULE
+        function submitExam() {
+            clearInterval(timerInterval);
+            audio.playCelebration();
+            
+            // Exit fullscreen if active
+            if (document.fullscreenElement) {
+                document.exitFullscreen().catch(() => {});
+            }
+
+            testScreen.classList.add('hidden');
+            resultScreen.classList.remove('hidden');
+
+            calculateResults();
+            startConfetti();
+        }
+
+        function calculateResults() {
+            let correct = 0;
+            let incorrect = 0;
+            let unattempted = 0;
+            
+            // Section metrics
+            const secMetrics = [
+                { name: "Reasoning", correct: 0, wrong: 0, skipped: 0, score: 0 },
+                { name: "General Awareness", correct: 0, wrong: 0, skipped: 0, score: 0 },
+                { name: "Quantitative Aptitude", correct: 0, wrong: 0, skipped: 0, score: 0 },
+                { name: "English Language", correct: 0, wrong: 0, skipped: 0, score: 0 }
+            ];
+
+            questions.forEach(q => {
+                const ans = userAnswers[q.id];
+                const secIdx = getSectionIndex(q.section);
+
+                if (!ans) {
+                    unattempted++;
+                    secMetrics[secIdx].skipped++;
+                } else if (ans === q.answer) {
+                    correct++;
+                    secMetrics[secIdx].correct++;
+                } else {
+                    incorrect++;
+                    secMetrics[secIdx].wrong++;
+                }
+            });
+
+            // Calculate scores (Correct = +2, Incorrect = -0.50)
+            secMetrics.forEach(m => {
+                m.score = (m.correct * 2) - (m.wrong * 0.5);
+            });
+
+            const totalScore = (correct * 2) - (incorrect * 0.5);
+            const scorePercentage = (totalScore / 200) * 100;
+            const passStatus = totalScore >= 90; // Cut-off is 90 marks out of 200
+
+            // Time Taken calculation
+            const timeDifference = new Date() - examStartTime;
+            const minutesTaken = Math.floor(timeDifference / 60000);
+            const secondsTaken = Math.floor((timeDifference % 60000) / 1000);
+
+            // Populate DOM Results
+            document.getElementById('res-candidate-name').textContent = candidateName;
+            document.getElementById('res-roll-number').textContent = `Roll Number: ${rollNumber}`;
+            document.getElementById('res-marks').textContent = `${totalScore.toFixed(2)} / 200`;
+            document.getElementById('res-correct').textContent = correct;
+            document.getElementById('res-wrong').textContent = incorrect;
+            document.getElementById('res-attempted').textContent = `${100 - unattempted} / 100`;
+            document.getElementById('res-accuracy').textContent = `${(100 - unattempted > 0) ? Math.round((correct / (100 - unattempted)) * 100) : 0}%`;
+            document.getElementById('res-time-taken').textContent = `${minutesTaken} Min ${secondsTaken} Sec`;
+            document.getElementById('res-percentage').textContent = `${scorePercentage.toFixed(2)} %`;
+            
+            const passFailStatus = document.getElementById('pass-fail-status');
+            const resStatusText = document.getElementById('res-status-text');
+            if (passStatus) {
+                passFailStatus.textContent = "PASS";
+                passFailStatus.className = "pass-tag";
+                resStatusText.textContent = "Qualified for Tier-II";
+                resStatusText.style.color = "var(--success)";
+            } else {
+                passFailStatus.textContent = "FAIL";
+                passFailStatus.className = "fail-tag";
+                resStatusText.textContent = "Did not meet cut-off (90)";
+                resStatusText.style.color = "var(--danger)";
+            }
+
+            // Populate table breakdown
+            const tbody = document.getElementById('section-analysis-body');
+            tbody.innerHTML = '';
+            secMetrics.forEach(m => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td style="font-weight: 600;">${m.name}</td>
+                    <td style="color: var(--success); font-weight:700;">${m.correct}</td>
+                    <td style="color: var(--danger); font-weight:700;">${m.wrong}</td>
+                    <td>${m.skipped}</td>
+                    <td style="font-weight: 700;">${m.score.toFixed(2)}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            // Populate Certificate Visualizer Details
+            document.getElementById('cert-candidate-name').textContent = candidateName.toUpperCase();
+            document.getElementById('cert-score-text').textContent = `Score: ${totalScore.toFixed(2)} / 200 (${scorePercentage.toFixed(2)}%)`;
+            
+            const now = new Date();
+            const dateStr = `${now.getDate().toString().padStart(2,'0')}-${(now.getMonth()+1).toString().padStart(2,'0')}-${now.getFullYear()}`;
+            document.getElementById('cert-date').textContent = dateStr;
+
+            // Render SVG Pie Chart
+            renderAccuracyPieChart(correct, incorrect, unattempted);
+            
+            // Render SVG Bar Chart
+            renderSectionBarChart(secMetrics);
+        }
+
+        function getSectionIndex(secName) {
+            if (secName === "Reasoning") return 0;
+            if (secName === "General Awareness") return 1;
+            if (secName === "Quantitative Aptitude") return 2;
+            return 3; // English
+        }
+
+        // SVG CHARTS GENERATOR
+        function renderAccuracyPieChart(correct, incorrect, unattempted) {
+            const svg = document.getElementById('pie-chart-svg');
+            svg.innerHTML = '';
+            
+            const total = 100; // 100 total questions
+            let currentAngle = 0;
+            
+            const slices = [
+                { value: correct, color: 'var(--success)' },
+                { value: incorrect, color: 'var(--danger)' },
+                { value: unattempted, color: 'var(--grey-medium)' }
+            ];
+
+            slices.forEach(slice => {
+                if (slice.value === 0) return;
+                const percentage = slice.value / total;
+                const angle = percentage * 360;
+                
+                // SVG arc path drawing logic
+                const rad = Math.PI / 180;
+                const x1 = 50 + 40 * Math.cos((currentAngle - 90) * rad);
+                const y1 = 50 + 40 * Math.sin((currentAngle - 90) * rad);
+                
+                currentAngle += angle;
+                
+                const x2 = 50 + 40 * Math.cos((currentAngle - 90) * rad);
+                const y2 = 50 + 40 * Math.sin((currentAngle - 90) * rad);
+                
+                const largeArc = angle > 180 ? 1 : 0;
+                
+                const pathData = slice.value === total 
+                    ? `<circle cx="50" cy="50" r="40" fill="none" stroke="${slice.color}" stroke-width="20" />`
+                    : `<path d="M 50 50 L ${x1} ${y1} A 40 40 0 ${largeArc} 1 ${x2} ${y2} Z" fill="${slice.color}" />`;
+                
+                svg.innerHTML += pathData;
+            });
+        }
+
+        function renderSectionBarChart(metrics) {
+            const container = document.getElementById('bar-chart-container');
+            container.innerHTML = '';
+
+            metrics.forEach(m => {
+                // Max possible marks in a section is 50. Normalize to height of 150px
+                const barHeight = Math.max(0, (m.score / 50) * 130);
+                
+                const barWrapper = document.createElement('div');
+                barWrapper.style.display = 'flex';
+                barWrapper.style.flexDirection = 'column';
+                barWrapper.style.alignItems = 'center';
+                barWrapper.style.flex = '1';
+
+                barWrapper.innerHTML = `
+                    <div style="font-size: 11px; font-weight:700; margin-bottom: 5px;">${m.score.toFixed(1)}</div>
+                    <div style="height: 130px; display: flex; align-items: flex-end; width: 30px; background: #eee; border-radius: 4px; overflow:hidden;">
+                        <div style="height: ${barHeight}px; width: 100%; background: linear-gradient(to top, var(--primary-hover), var(--primary)); border-radius: 4px;"></div>
+                    </div>
+                    <div style="font-size: 10px; font-weight: 600; text-align: center; margin-top: 5px; height: 30px; overflow: hidden; width: 60px;">${m.name.split(' ')[0]}</div>
+                `;
+                container.appendChild(barWrapper);
+            });
+        }
+
+        // CANVAS CERTIFICATE RENDERER & PNG EXPORTER
+        document.getElementById('btn-download-png').addEventListener('click', () => {
+            audio.playClick();
+            
+            // Build canvas template
+            const canvas = document.createElement('canvas');
+            canvas.width = 800;
+            canvas.height = 600;
+            const ctx = canvas.getContext('2d');
+
+            // Background fill
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Double golden border lines
+            ctx.strokeStyle = '#d4af37';
+            ctx.lineWidth = 10;
+            ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
+            
+            ctx.lineWidth = 2;
+            ctx.strokeRect(35, 35, canvas.width - 70, canvas.height - 70);
+
+            // Text Styles
+            ctx.textAlign = 'center';
+
+            // Trophy Emoji substitute (drawing simple vector award ribbon)
+            ctx.fillStyle = '#d4af37';
+            ctx.font = '50px sans-serif';
+            ctx.fillText('🏆', canvas.width / 2, 90);
+
+            // Brand Header
+            ctx.font = 'bold 30px sans-serif';
+            ctx.fillText('POLAI EDUCATION HUB', canvas.width / 2, 160);
+
+            // Subtitle
+            ctx.font = 'italic 18px Georgia, serif';
+            ctx.fillStyle = '#616161';
+            ctx.fillText('Certificate of Completion', canvas.width / 2, 200);
+
+            // Certifies text
+            ctx.font = '16px sans-serif';
+            ctx.fillStyle = '#212121';
+            ctx.fillText('This certifies that', canvas.width / 2, 260);
+
+            // Candidate Name
+            ctx.font = 'bold 34px Georgia, serif';
+            ctx.fillStyle = '#d4af37';
+            ctx.fillText(candidateName.toUpperCase(), canvas.width / 2, 320);
+
+            // Horizontal line under name
+            ctx.beginPath();
+            ctx.moveTo(canvas.width / 2 - 200, 335);
+            ctx.lineTo(canvas.width / 2 + 200, 335);
+            ctx.strokeStyle = '#bdbdbd';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Exam description
+            ctx.font = '16px sans-serif';
+            ctx.fillStyle = '#212121';
+            ctx.fillText('has successfully completed the exam mock series of', canvas.width / 2, 380);
+
+            ctx.font = 'bold 22px sans-serif';
+            ctx.fillStyle = '#0059b3';
+            ctx.fillText('SSC CGL MOCK TEST 2026', canvas.width / 2, 420);
+
+            // Score details
+            ctx.font = 'bold 20px sans-serif';
+            ctx.fillStyle = '#212121';
+            const marksStr = document.getElementById('res-marks').textContent;
+            ctx.fillText(`Score: ${marksStr} (${document.getElementById('res-percentage').textContent})`, canvas.width / 2, 460);
+
+            // Footer date & details
+            ctx.font = '14px sans-serif';
+            ctx.fillStyle = '#616161';
+            ctx.textAlign = 'left';
+            ctx.fillText(`Date: ${document.getElementById('cert-date').textContent}`, 70, 530);
+
+            ctx.textAlign = 'right';
+            ctx.fillText('YouTube: Polai Education Hub', canvas.width - 70, 530);
+
+            // Signature placeholder decoration
+            ctx.textAlign = 'center';
+            ctx.font = 'italic 15px Georgia, serif';
+            ctx.fillText('Congratulations', canvas.width / 2, 530);
+
+            // Create download anchor trigger link
+            const dataURL = canvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.download = `Polai_CGL_Certificate_${candidateName.replace(/\s+/g, '_')}.png`;
+            link.href = dataURL;
+            link.click();
+        });
+
+        // NATIVE PDF PRINTER EXPORTER
+        document.getElementById('btn-download-pdf').addEventListener('click', () => {
+            audio.playClick();
+            window.print();
+        });
+
+        // CANVAS CONFETTI CELEBRATION COMPONENT
+        function startConfetti() {
+            const canvas = document.createElement('canvas');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            canvas.style.position = 'fixed';
+            canvas.style.top = '0';
+            canvas.style.left = '0';
+            canvas.style.pointerEvents = 'none';
+            canvas.style.zIndex = '999';
+            document.body.appendChild(canvas);
+
+            const ctx = canvas.getContext('2d');
+            const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800', '#ff5722'];
+            const particles = [];
+
+            for (let i = 0; i < 150; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    r: Math.random() * 6 + 4,
+                    d: Math.random() * canvas.height,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    tilt: Math.random() * 10 - 5,
+                    tiltAngleIncremental: Math.random() * 0.07 + 0.02,
+                    tiltAngle: 0
+                });
+            }
+
+            let animationFrameId;
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let active = false;
+
+                particles.forEach(p => {
+                    p.tiltAngle += p.tiltAngleIncremental;
+                    p.y += (Math.cos(p.tiltAngle) + 3 + p.r / 2) / 2;
+                    p.x += Math.sin(p.tiltAngle);
+                    p.tilt = Math.sin(p.tiltAngle - (p.r / 3)) * 15;
+
+                    if (p.y < canvas.height) {
+                        active = true;
+                    }
+
+                    ctx.beginPath();
+                    ctx.lineWidth = p.r;
+                    ctx.strokeStyle = p.color;
+                    ctx.moveTo(p.x + p.tilt + p.r / 2, p.y);
+                    ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 2);
+                    ctx.stroke();
+                });
+
+                if (active) {
+                    animationFrameId = requestAnimationFrame(draw);
+                } else {
+                    document.body.removeChild(canvas);
+                }
+            }
+
+            draw();
+            // Automatically clear animation frame and canvas after 8 seconds
+            setTimeout(() => {
+                cancelAnimationFrame(animationFrameId);
+                if (canvas.parentNode) {
+                    document.body.removeChild(canvas);
+                }
+            }, 8000);
+        }
+    </script>
+</body>
+</html>
